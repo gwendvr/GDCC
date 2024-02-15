@@ -1,53 +1,111 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class IA : MonoBehaviour
 {
-    public UnityEngine.AI.NavMeshAgent ai;
+    public enum AIState
+    {
+        Idle,
+        Walking,
+        Sprinting,
+        Sneaking
+    }
+
+    public NavMeshAgent ai;
     public Animator aiAnim;
-    int randNum, lastRandNum = -1; // Ajoute lastRandNum pour garder en mémoire la dernière destination.
+    int randNum, lastRandNum = -1;
     public Transform[] RandDest;
-    public bool walking, idle;
+    public float actionTime, walkSpeed, runSpeed, sneakSpeed;
     Vector3 dest;
+    bool isJumping = false, isCrouching = false;
+    float speed;
+    public AIState currentState;
+
+    [SerializeField] private float timeToChangeDestination; // Ajouté pour le changement aléatoire
+    private float timeUntilChangeDestination;
+    public float speedMultiplier = 1.5f; // Facteur multiplicatif pour augmenter la vitesse de déplacement
 
     void Start()
     {
-        walking = true;
-        SelectNewDestination(); // Utilise une méthode pour sélectionner une nouvelle destination.
-        aiAnim.SetTrigger("walk");
+        SelectNewDestination();
+        StartCoroutine(RandomAction());
+        timeUntilChangeDestination = timeToChangeDestination; // Initialisation du compte à rebours
     }
+
     void Update()
     {
-        if (walking == true)
+        if (!isJumping && !isCrouching)
         {
             ai.destination = dest;
-            ai.speed = 3;
-        }
-        if (idle == true)
-        {
-            ai.speed = 0;
+
+            switch (currentState)
+            {
+                case AIState.Idle:
+                    speed = 0;
+                    break;
+                case AIState.Walking:
+                    speed = walkSpeed;
+                    break;
+                case AIState.Sprinting:
+                    speed = runSpeed;
+                    break;
+                case AIState.Sneaking:
+                    speed = sneakSpeed; // Assigne une vitesse propre à l'état de sneak
+                    break;
+            }
+
+            ai.speed = speed * speedMultiplier; // Modification pour utiliser speedMultiplier
+            aiAnim.SetFloat("Speed", speed);
+
+            timeUntilChangeDestination -= Time.deltaTime;
+            if(timeUntilChangeDestination <= 0)
+            {
+                SelectNewDestination();
+                timeUntilChangeDestination = timeToChangeDestination;
+            }
         }
     }
-    void OnTriggerEnter(Collider other)
+
+    IEnumerator RandomAction()
     {
-        if (other.CompareTag("destination"))
+        while (true)
         {
-            idle = true;
-            walking = false;
-            aiAnim.ResetTrigger("walk");
-            aiAnim.SetTrigger("idle");
-            StartCoroutine("nextDest");
+            yield return new WaitForSeconds(actionTime);
+            int action = Random.Range(0, 5);
+
+            switch (action)
+            {
+                case 0: // Idle
+                    isJumping = isCrouching = false;
+                    currentState = AIState.Idle;
+                    break;
+                case 1: // Marche
+                    isJumping = isCrouching = false;
+                    currentState = AIState.Walking;
+                    break;
+                case 2: // Sprint
+                    isJumping = isCrouching = false;
+                    currentState = AIState.Sprinting;
+                    break;
+                case 3: // Saut
+                    isJumping = true;
+                    aiAnim.SetBool("Jump", true);
+                    yield return new WaitForSeconds(1);
+                    aiAnim.SetBool("Jump", false);
+                    isJumping = false;
+                    break;
+                case 4: // Se met accroupi (Sneak)
+                    isCrouching = true;
+                    aiAnim.SetBool("IsSneaking", true);
+                    currentState = AIState.Sneaking;
+                    yield return new WaitForSeconds(2);
+                    aiAnim.SetBool("IsSneaking", false);
+                    isCrouching = false;
+                    break;
+            }
         }
-    }
-    IEnumerator nextDest()
-    {
-        yield return new WaitForSeconds(Random.Range(1,7));
-        idle = false;
-        walking = true;
-        aiAnim.ResetTrigger("idle");
-        aiAnim.SetTrigger("walk");
-        SelectNewDestination(); // Réutilise la méthode pour s'assurer de ne pas répéter la destination.
     }
 
     void SelectNewDestination()
@@ -55,9 +113,8 @@ public class IA : MonoBehaviour
         do
         {
             randNum = Random.Range(0, RandDest.Length);
-        } while (randNum == lastRandNum); // Continue de choisir aléatoirement une destination jusqu'à ce qu'elle soit différente de la dernière.
-        
-        lastRandNum = randNum; // Mets à jour lastRandNum à la fin de la méthode.
+        } while (randNum == lastRandNum);
+        lastRandNum = randNum;
         dest = RandDest[randNum].position;
     }
 }
