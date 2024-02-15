@@ -21,7 +21,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked; 
+
+        //UnityEngine.Cursor.lockState = CursorLockMode.Locked; 
         //UnityEngine.Cursor.visible = false;  
     }
 
@@ -59,5 +60,15 @@ public class PlayerController : MonoBehaviour
             photoAnim.SetTrigger("Ranger");
             //Retirer l'autorisation de prise de photo
         }
+    }
+
+    public void AdjustCam(float xPlacement)
+    {
+        cam.rect = new Rect(xPlacement, 0, 0.5f, 1);
+    }
+
+    public void destroy()
+    {
+        Destroy(this.gameObject);
     }
 }
