@@ -53,6 +53,24 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ulti"",
+                    ""type"": ""Button"",
+                    ""id"": ""7e503c51-d0c5-49a0-8d0e-71cea2ebcc95"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AddUltiProgression"",
+                    ""type"": ""Button"",
+                    ""id"": ""02e54a86-36f5-47c9-b416-5c8592fa426f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +150,28 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""PhotoMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dbd06a44-5ee5-4e0b-8ede-cd90109be8bd"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ulti"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f764d7aa-bac2-4667-bf12-f27fd40f3e3e"",
+                    ""path"": ""<Keyboard>/u"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AddUltiProgression"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +183,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_MainActions_MoveCamUpDown = m_MainActions.FindAction("MoveCamUpDown", throwIfNotFound: true);
         m_MainActions_MoveCamLeftRight = m_MainActions.FindAction("MoveCamLeftRight", throwIfNotFound: true);
         m_MainActions_PhotoMode = m_MainActions.FindAction("PhotoMode", throwIfNotFound: true);
+        m_MainActions_Ulti = m_MainActions.FindAction("Ulti", throwIfNotFound: true);
+        m_MainActions_AddUltiProgression = m_MainActions.FindAction("AddUltiProgression", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +249,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_MainActions_MoveCamUpDown;
     private readonly InputAction m_MainActions_MoveCamLeftRight;
     private readonly InputAction m_MainActions_PhotoMode;
+    private readonly InputAction m_MainActions_Ulti;
+    private readonly InputAction m_MainActions_AddUltiProgression;
     public struct MainActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -214,6 +258,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @MoveCamUpDown => m_Wrapper.m_MainActions_MoveCamUpDown;
         public InputAction @MoveCamLeftRight => m_Wrapper.m_MainActions_MoveCamLeftRight;
         public InputAction @PhotoMode => m_Wrapper.m_MainActions_PhotoMode;
+        public InputAction @Ulti => m_Wrapper.m_MainActions_Ulti;
+        public InputAction @AddUltiProgression => m_Wrapper.m_MainActions_AddUltiProgression;
         public InputActionMap Get() { return m_Wrapper.m_MainActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -232,6 +278,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @PhotoMode.started += instance.OnPhotoMode;
             @PhotoMode.performed += instance.OnPhotoMode;
             @PhotoMode.canceled += instance.OnPhotoMode;
+            @Ulti.started += instance.OnUlti;
+            @Ulti.performed += instance.OnUlti;
+            @Ulti.canceled += instance.OnUlti;
+            @AddUltiProgression.started += instance.OnAddUltiProgression;
+            @AddUltiProgression.performed += instance.OnAddUltiProgression;
+            @AddUltiProgression.canceled += instance.OnAddUltiProgression;
         }
 
         private void UnregisterCallbacks(IMainActionsActions instance)
@@ -245,6 +297,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @PhotoMode.started -= instance.OnPhotoMode;
             @PhotoMode.performed -= instance.OnPhotoMode;
             @PhotoMode.canceled -= instance.OnPhotoMode;
+            @Ulti.started -= instance.OnUlti;
+            @Ulti.performed -= instance.OnUlti;
+            @Ulti.canceled -= instance.OnUlti;
+            @AddUltiProgression.started -= instance.OnAddUltiProgression;
+            @AddUltiProgression.performed -= instance.OnAddUltiProgression;
+            @AddUltiProgression.canceled -= instance.OnAddUltiProgression;
         }
 
         public void RemoveCallbacks(IMainActionsActions instance)
@@ -267,5 +325,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnMoveCamUpDown(InputAction.CallbackContext context);
         void OnMoveCamLeftRight(InputAction.CallbackContext context);
         void OnPhotoMode(InputAction.CallbackContext context);
+        void OnUlti(InputAction.CallbackContext context);
+        void OnAddUltiProgression(InputAction.CallbackContext context);
     }
 }

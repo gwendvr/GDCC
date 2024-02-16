@@ -10,13 +10,14 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    public float _sensitivity = 5f;
+    public float sensitivity = 5f;
     public Camera cam;
     Vector2 moveCam;
-    public UnityEngine.UI.Image photoModeUI;
     public bool onPhotoMode = false;
     public GameObject photoDevice;
     public Animator photoAnim;
+    public UltiBehaviour ulti;
+    public int ID; 
 
 
     private void Start()
@@ -28,9 +29,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Rotate(0, moveCam.y  * _sensitivity * Time.deltaTime, 0);
+        transform.Rotate(0, moveCam.y  * sensitivity * Time.deltaTime, 0);
         Mathf.Clamp(moveCam.x, -80, 80);
-        cam.transform.Rotate(moveCam.x * _sensitivity * Time.deltaTime, 0, 0);
+        cam.transform.Rotate(moveCam.x * sensitivity * Time.deltaTime, 0, 0);
         moveCam = new Vector2(0, 0);
     }
 
@@ -71,4 +72,21 @@ public class PlayerController : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+
+    public void SetUltiID(int _ultiID)
+    {
+        ulti.SetUltiID(_ultiID, ID);
+    }
+
+    public void OnAddUltiProgression()
+    {
+        ulti.AddUltiProgression(10);
+        
+    }
+
+    public void OnUlti()
+    {
+        ulti.UseUlti(transform.position);
+    }
+
 }
