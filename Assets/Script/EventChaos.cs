@@ -20,7 +20,7 @@ public class EventChaos : MonoBehaviour
     {
         if (!EventOnGoing)
         {
-            EventId = Random.Range(0, 5);
+            EventId = Random.Range(0, 7);
             Debug.Log("Event en court :" +EventId);
             switch (EventId)
             {
@@ -47,6 +47,15 @@ public class EventChaos : MonoBehaviour
                     EventOnGoing = true;
                     StartCoroutine(Nothing());
                     break;
+                case 5:
+                    EventOnGoing = true;
+                    StartCoroutine(Nothing());
+                    break;
+                case 6:
+                    EventOnGoing = true;
+                    StartCoroutine(Nothing());
+                    break;
+                
                     
             }
         }
