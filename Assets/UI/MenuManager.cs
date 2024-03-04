@@ -7,7 +7,6 @@ public class MenuManager : MonoBehaviour
 {
     public PlayerSpawner playerSpawner;
     public Camera cam;
-    public Button[] buttons;
     public GameObject setting;
     public GameObject menu;
 
