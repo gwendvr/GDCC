@@ -21,31 +21,19 @@ public class MenuManager : MonoBehaviour
     {
         playerSpawner.SpawnPlayer(2);
         Destroy(cam);
-        foreach (var button in buttons)
-        {
-            Destroy(button);
-        }
-        Destroy(this);
+        menu.SetActive(false);
     }
     public void ThreePlayerSelected()
     {
         playerSpawner.SpawnPlayer(3);
         Destroy(cam);
-        foreach (var button in buttons)
-        {
-            Destroy(button);
-        }
-        Destroy(this);
+        menu.SetActive(false);
     }
     public void FourPlayerSelected()
     {
         playerSpawner.SpawnPlayer(4);
         Destroy(cam);
-        foreach (var button in buttons)
-        {
-            Destroy(button);
-        }
-        Destroy(this);
+        menu.SetActive(false);
     }
 
     public void GoSetting()
