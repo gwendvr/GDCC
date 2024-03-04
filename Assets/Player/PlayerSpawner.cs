@@ -34,11 +34,11 @@ public class PlayerSpawner : MonoBehaviour
 
     public void InvertCam(int _exeption)
     {
-        for (int i = nbPlayer; i >= 0; i--)
+        for (int i = nbPlayer - 1; i >= 0; i--)
         {
             if(i!=_exeption)
             {
-                player[i].cam.transform.rotation = Quaternion.Euler(player[i].cam.transform.rotation.x, player[i].cam.transform.rotation.y, 180);
+                player[i].cam.transform.rotation = new Quaternion(0, player[i].cam.transform.rotation.y, 180, player[i].cam.transform.rotation.w);
                 StartCoroutine(ResetScreen(i));
             }
         }
@@ -48,6 +48,6 @@ public class PlayerSpawner : MonoBehaviour
     IEnumerator ResetScreen(int _playerID)
     {
         yield return new WaitForSeconds(5f);
-        player[_playerID].cam.transform.Rotate(180, 0, 0);
+        player[_playerID].cam.transform.rotation = new Quaternion(0, player[_playerID].cam.transform.rotation.y, 0, 0);
     }
 }

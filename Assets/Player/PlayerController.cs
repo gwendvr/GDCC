@@ -31,7 +31,14 @@ public class PlayerController : MonoBehaviour
     {
         transform.Rotate(0, moveCam.y  * sensitivity * Time.deltaTime, 0);
         Mathf.Clamp(moveCam.x, -80, 80);
-        cam.transform.Rotate(moveCam.x * sensitivity * Time.deltaTime, 0, 0);
+        if (moveCam.x < 0 && cam.transform.rotation.x < 80)
+        {
+            cam.transform.Rotate(moveCam.x * sensitivity * Time.deltaTime, 0, 0);
+        }
+        else if (moveCam.x > 0 && cam.transform.rotation.x > -80)
+        {
+            cam.transform.Rotate(moveCam.x * sensitivity * Time.deltaTime, 0, 0);
+        }
         moveCam = new Vector2(0, 0);
     }
 
