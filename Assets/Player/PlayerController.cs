@@ -17,7 +17,14 @@ public class PlayerController : MonoBehaviour
     public GameObject photoDevice;
     public Animator photoAnim;
     public UltiBehaviour ulti;
-    public int ID; 
+    public int ID;
+
+    //Stay Task Variable
+    private StayTaskPoint stayPoint;
+    private bool inStayTask = false;
+    private float timeLeft;
+    private float ultiGain;
+
 
 
     private void Start()
@@ -40,6 +47,20 @@ public class PlayerController : MonoBehaviour
             cam.transform.Rotate(moveCam.x * sensitivity * Time.deltaTime, 0, 0);
         }
         moveCam = new Vector2(0, 0);
+
+        if(inStayTask)
+        {
+            if (stayPoint.timeToStay <= 0)
+            {
+                ulti.AddUltiProgression(stayPoint.ultiGain);
+                inStayTask = false;
+                Destroy(stayPoint.gameObject);
+                
+            }
+            else stayPoint.timeToStay -= Time.deltaTime;
+            print(stayPoint.timeToStay);
+        }
+
     }
 
 
@@ -85,9 +106,9 @@ public class PlayerController : MonoBehaviour
         ulti.SetUltiID(_ultiID, ID);
     }
 
-    public void OnAddUltiProgression()
+    public void OnAddUltiProgression(float _percent)
     {
-        ulti.AddUltiProgression(10);
+        ulti.AddUltiProgression(_percent);
         
     }
 
@@ -95,5 +116,47 @@ public class PlayerController : MonoBehaviour
     {
         ulti.UseUlti(transform.position);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Staytask"))
+        {
+            StayTaskPoint _stayPoint = collision.gameObject.GetComponent<StayTaskPoint>();
+            inStayTask = true;
+            stayPoint = _stayPoint;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Staytask"))
+        {
+            StayTaskPoint _stayPoint = collision.gameObject.GetComponent<StayTaskPoint>();
+            inStayTask = false;
+            stayPoint.timeToStay = stayPoint.timeReset;
+            stayPoint = null;
+        }
+    }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Staytask"))
+    //    {
+    //        StayTaskPoint _stayPoint = other.gameObject.GetComponent<StayTaskPoint>();
+    //        inStayTask = true;
+    //        stayPoint = _stayPoint;
+    //    }
+    //}
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Staytask"))
+    //    {
+    //        StayTaskPoint _stayPoint = other.gameObject.GetComponent<StayTaskPoint>();
+    //        inStayTask = false;
+    //        stayPoint.timeToStay = stayPoint.timeReset;
+    //        stayPoint = null;
+
+    //    }
+    //}
 
 }

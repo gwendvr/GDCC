@@ -12,6 +12,7 @@ public class player : MonoBehaviour
     public GameObject textDone;
     public Slider progressBar;
     public bool canInteract;
+    public PlayerController playerController;
     //public bool isInteracting;
     private IInteract currentInteraction;
 
@@ -80,5 +81,6 @@ public class player : MonoBehaviour
     {
         currentInteraction.available = false; 
         progressBar.gameObject.SetActive(false);
+        playerController.OnAddUltiProgression(progressBar.maxValue);
     }
 }
