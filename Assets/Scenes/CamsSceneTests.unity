@@ -311,7 +311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393709451373967789, guid: 118baae2a79c44849b24d789b0c651ef, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: MenuCanva
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393709451373967789, guid: 118baae2a79c44849b24d789b0c651ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7580627791066445172, guid: 118baae2a79c44849b24d789b0c651ef, type: 3}
       propertyPath: cam
