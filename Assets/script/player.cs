@@ -35,7 +35,7 @@ public class player : MonoBehaviour
             {
                 progressBar.gameObject.SetActive(true);
                 //isInteracting = true;
-                progressBar.value += 0.01f;
+                progressBar.value += 0.025f;
                 if (progressBar.value == progressBar.maxValue)
                 {
                     clearTask();

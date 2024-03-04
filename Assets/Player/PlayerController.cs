@@ -22,10 +22,8 @@ public class PlayerController : MonoBehaviour
     //Stay Task Variable
     private StayTaskPoint stayPoint;
     private bool inStayTask = false;
-    private float timeLeft;
-    private float ultiGain;
 
-
+    public FirstPersonController firstPersonController;
 
     private void Start()
     {
@@ -138,25 +136,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Staytask"))
-    //    {
-    //        StayTaskPoint _stayPoint = other.gameObject.GetComponent<StayTaskPoint>();
-    //        inStayTask = true;
-    //        stayPoint = _stayPoint;
-    //    }
-    //}
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Staytask"))
-    //    {
-    //        StayTaskPoint _stayPoint = other.gameObject.GetComponent<StayTaskPoint>();
-    //        inStayTask = false;
-    //        stayPoint.timeToStay = stayPoint.timeReset;
-    //        stayPoint = null;
-
-    //    }
-    //}
-
+    public void FreezePlayer(bool _canMove)
+    {
+        firstPersonController.playerCanMove = !_canMove;
+    }
 }
