@@ -1162,6 +1162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppareilPhoto
       objectReference: {fileID: 0}
+    - target: {fileID: 8861162903735633158, guid: 95c02d19c31fe9843bdb9be029156160, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8600000, guid: 55af2f4662472fa4e82e3f7443c6d54e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1363,6 +1367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppareilPhoto
       objectReference: {fileID: 0}
+    - target: {fileID: 8861162903735633158, guid: 95c02d19c31fe9843bdb9be029156160, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8600000, guid: 55af2f4662472fa4e82e3f7443c6d54e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1786,6 +1794,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppareilPhoto
       objectReference: {fileID: 0}
+    - target: {fileID: 8861162903735633158, guid: 95c02d19c31fe9843bdb9be029156160, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8600000, guid: 55af2f4662472fa4e82e3f7443c6d54e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2055,6 +2067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppareilPhoto
       objectReference: {fileID: 0}
+    - target: {fileID: 8861162903735633158, guid: 95c02d19c31fe9843bdb9be029156160, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8600000, guid: 55af2f4662472fa4e82e3f7443c6d54e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2127,6 +2143,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppareilPhoto
       objectReference: {fileID: 0}
+    - target: {fileID: 8861162903735633158, guid: 95c02d19c31fe9843bdb9be029156160, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8600000, guid: 55af2f4662472fa4e82e3f7443c6d54e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4789,6 +4809,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppareilPhoto
       objectReference: {fileID: 0}
+    - target: {fileID: 8861162903735633158, guid: 95c02d19c31fe9843bdb9be029156160, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8600000, guid: 55af2f4662472fa4e82e3f7443c6d54e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6908,6 +6932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppareilPhoto
       objectReference: {fileID: 0}
+    - target: {fileID: 8861162903735633158, guid: 95c02d19c31fe9843bdb9be029156160, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8600000, guid: 55af2f4662472fa4e82e3f7443c6d54e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8085,6 +8113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppareilPhoto
       objectReference: {fileID: 0}
+    - target: {fileID: 8861162903735633158, guid: 95c02d19c31fe9843bdb9be029156160, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8600000, guid: 55af2f4662472fa4e82e3f7443c6d54e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
