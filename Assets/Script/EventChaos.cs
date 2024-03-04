@@ -159,12 +159,12 @@ public class EventChaos : MonoBehaviour
             
             cam.transform.localPosition = originalPosition;
             cam.transform.localRotation = originalRotation;
-            EventOnGoing = true;
+            EventOnGoing = false;
         }
 
         IEnumerator Nothing()
         {
             yield return new WaitForSeconds(30);
-            EventOnGoing = true;
+            EventOnGoing = false;
         }
 }
