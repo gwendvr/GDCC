@@ -55,8 +55,10 @@ public class EventChaos : MonoBehaviour
                     EventOnGoing = true;
                     StartCoroutine(Nothing());
                     break;
-                
-                    
+                case 7:
+                    EventOnGoing = true;
+                    StartCoroutine(SlowMotion());
+                    break;
             }
         }
     }
@@ -89,7 +91,16 @@ public class EventChaos : MonoBehaviour
         }
         EventOnGoing = false;
     }
-     IEnumerator Earthquake()
+
+    IEnumerator SlowMotion()
+    {
+        Time.timeScale = 0.5f;
+        yield return new WaitForSeconds(15);
+        Time.timeScale = 1f;
+        EventOnGoing = false;
+    }
+
+    IEnumerator Earthquake()
         {
             List<Vector3> originalPositions = new List<Vector3>(); 
 
@@ -117,7 +128,7 @@ public class EventChaos : MonoBehaviour
                 yield return null;
             }
 
-            // Remet les caméras à leur position originale
+            
             for (int i = 0; i < Player.Length; i++)
             {
                 GameObject cam = Player[i];
@@ -128,24 +139,24 @@ public class EventChaos : MonoBehaviour
         IEnumerator DrunkEffectCoroutine(GameObject cam)
         {
             float startTime = Time.time;
-            Vector3 originalPosition = cam.transform.localPosition; // Sauvegarde la position originale
-            Quaternion originalRotation = cam.transform.localRotation; // Sauvegarde la rotation originale
+            Vector3 originalPosition = cam.transform.localPosition; 
+            Quaternion originalRotation = cam.transform.localRotation; 
 
             while (Time.time < startTime + 30)
             {
-                // Crée un zigzag en modifiant la position X et Y de manière sinusoïdale, variante avec le temps
+                
                 float drunkX = Mathf.Sin(Time.time * 2) * intensity;
                 float drunkY = Mathf.Cos(Time.time * 2.5f) * intensity;
                 cam.transform.localPosition = originalPosition + new Vector3(drunkX, drunkY, 0);
 
-                // Ajoute une légère rotation basée sur l'amplitude sinusoïdale pour un effet de balancement
+                
                 float rotationZ = Mathf.Sin(Time.time) * rotationIntensity;
                 cam.transform.localRotation = originalRotation * Quaternion.Euler(0, 0, rotationZ);
 
-                yield return null; // Passe au prochain frame
+                yield return null; 
             }
         
-            // Réinitialise la position et la rotation de la caméra
+            
             cam.transform.localPosition = originalPosition;
             cam.transform.localRotation = originalRotation;
             EventOnGoing = true;
