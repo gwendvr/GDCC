@@ -7,6 +7,7 @@ public class PlayerSpawner : MonoBehaviour
     public PlayerController[] player;
     public GameObject[] buttonUltiSelection;
     public int nbPlayer;
+    public Animator[] fakePhotoSpawnPoints;
     public void SpawnPlayer(int _nbPlayer)
     {
         nbPlayer = _nbPlayer;
@@ -45,9 +46,33 @@ public class PlayerSpawner : MonoBehaviour
 
     }
 
+    public void SpawnFakePhoto()
+    {
+        int _fakePhotoSelected1 = Random.Range(0, fakePhotoSpawnPoints.Length);
+        int _fakePhotoSelected2 = Random.Range(0, fakePhotoSpawnPoints.Length);
+        int _fakePhotoSelected3 = Random.Range(0, fakePhotoSpawnPoints.Length);
+        int _fakePhotoSelected4 = Random.Range(0, fakePhotoSpawnPoints.Length);
+        print("fake cams selected : " + _fakePhotoSelected1 + _fakePhotoSelected2 + _fakePhotoSelected3 + _fakePhotoSelected4);
+
+        for(int i = 0; i < fakePhotoSpawnPoints.Length; i++) 
+        {
+            if (i == _fakePhotoSelected1 || i == _fakePhotoSelected2 || i == _fakePhotoSelected3 || i == _fakePhotoSelected4)
+            {
+                fakePhotoSpawnPoints[i].SetTrigger("Sortir");
+                StartCoroutine(ResetScreen(i));
+            }
+        }
+    }
+
     IEnumerator ResetScreen(int _playerID)
     {
         yield return new WaitForSeconds(5f);
         player[_playerID].cam.transform.rotation = new Quaternion(0, player[_playerID].cam.transform.rotation.y, 0, 0);
     }
-}
+
+    IEnumerator HideFakeCams(int _fakeCamID)
+    {
+        yield return new WaitForSeconds(5f);
+        fakePhotoSpawnPoints[_fakeCamID].SetTrigger("Ranger");
+    }
+    }

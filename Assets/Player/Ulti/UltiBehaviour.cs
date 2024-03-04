@@ -42,6 +42,7 @@ public class UltiBehaviour : MonoBehaviour
 
                 case 2: //Fake Camera
                     print("spawn fake camera");
+                    playerGestion.SpawnFakePhoto();
 
                     break;
 
