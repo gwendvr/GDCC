@@ -140,8 +140,16 @@ PrefabInstance:
     - {fileID: 6892084726821012548, guid: bd254a6fe8e64874e8ed0d8d58e4be32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 45209683483455979, guid: bd254a6fe8e64874e8ed0d8d58e4be32, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8450899123294663309}
   m_SourcePrefab: {fileID: 100100000, guid: bd254a6fe8e64874e8ed0d8d58e4be32, type: 3}
+--- !u!20 &2715784121357680120 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8351100996286594977, guid: bd254a6fe8e64874e8ed0d8d58e4be32, type: 3}
+  m_PrefabInstance: {fileID: 6221007486187012697}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &3502140841139657543 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7408262864525154590, guid: bd254a6fe8e64874e8ed0d8d58e4be32, type: 3}
@@ -152,3 +160,64 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7794441097225566950, guid: bd254a6fe8e64874e8ed0d8d58e4be32, type: 3}
   m_PrefabInstance: {fileID: 6221007486187012697}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6266170293183148978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 45209683483455979, guid: bd254a6fe8e64874e8ed0d8d58e4be32, type: 3}
+  m_PrefabInstance: {fileID: 6221007486187012697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8450899123294663309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6266170293183148978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90ba6530d9bfda47abb4610956b2f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 2715784121357680120}
+  fov: 60
+  invertCamera: 0
+  cameraCanMove: 1
+  mouseSensitivity: 2
+  maxLookAngle: 50
+  lockCursor: 1
+  crosshair: 1
+  crosshairImage: {fileID: 21300000, guid: be4ce60e2c9768c44b9b10b9c5258045, type: 3}
+  crosshairColor: {r: 1, g: 1, b: 1, a: 1}
+  enableZoom: 1
+  holdToZoom: 1
+  zoomKey: 324
+  zoomFOV: 60
+  zoomStepTime: 5
+  playerCanMove: 1
+  walkSpeed: 5
+  maxVelocityChange: 10
+  enableSprint: 1
+  unlimitedSprint: 0
+  sprintKey: 304
+  sprintSpeed: 7
+  sprintDuration: 5
+  sprintCooldown: 0.5
+  sprintFOV: 90
+  sprintFOVStepTime: 4
+  useSprintBar: 1
+  hideBarWhenFull: 1
+  sprintBarBG: {fileID: 4805372352167813817, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
+  sprintBar: {fileID: 139761266296038015, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
+  sprintBarWidthPercent: 0.3
+  sprintBarHeightPercent: 0.02
+  enableJump: 1
+  jumpKey: 32
+  jumpPower: 5
+  enableCrouch: 1
+  holdToCrouch: 1
+  crouchKey: 306
+  crouchHeight: 0.75
+  speedReduction: 0.5
+  enableHeadBob: 1
+  joint: {fileID: 7525249337376603738, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
+  bobSpeed: 10
+  bobAmount: {x: 0, y: 0.05, z: 0}
