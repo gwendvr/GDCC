@@ -12096,7 +12096,10 @@ MonoBehaviour:
   - {fileID: 523462362}
   - {fileID: 1459745691}
   - {fileID: 221251801}
-  Player: []
+  Player:
+  - {fileID: 150862042}
+  magnitude: 0.2
+  intensity: 0.5
 --- !u!1 &1354405804
 GameObject:
   m_ObjectHideFlags: 0
