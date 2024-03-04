@@ -6311,9 +6311,8 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1564626843
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 9024497078386057661, guid: 118baae2a79c44849b24d789b0c651ef, type: 3}
+  m_PrefabInstance: {fileID: 122820434840991542}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564626841}
   m_Enabled: 1
@@ -9129,7 +9128,7 @@ SceneRoots:
   - {fileID: 1553583963}
   - {fileID: 1888482676}
   - {fileID: 2016705360}
-  - {fileID: 848857068}
+  - {fileID: 122820434840991542}
   - {fileID: 524965777}
   - {fileID: 1411440144}
   - {fileID: 837070931}
