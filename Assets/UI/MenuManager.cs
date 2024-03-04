@@ -8,6 +8,14 @@ public class MenuManager : MonoBehaviour
     public PlayerSpawner playerSpawner;
     public Camera cam;
     public Button[] buttons;
+    public GameObject setting;
+    public GameObject menu;
+
+    void Start()
+    {
+        menu.SetActive(true);
+        setting.SetActive(false);
+    }
 
     public void TwoPlayerSelected()
     {
@@ -38,5 +46,17 @@ public class MenuManager : MonoBehaviour
             Destroy(button);
         }
         Destroy(this);
+    }
+
+    public void GoSetting()
+    {
+        menu.SetActive(false);
+        setting.SetActive(true);
+    }
+
+    public void ReturnMenu()
+    {
+        menu.SetActive(true);
+        setting.SetActive(false);
     }
 }
