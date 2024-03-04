@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 10275619373386822}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 0.00030000004, y: 0.00039999996, z: -0.52}
+  m_LocalPosition: {x: 0.00030000004, y: -0.000000013387762, z: -0.52}
   m_LocalScale: {x: 0.093972616, y: 1, z: 0.09207325}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 1188734343092570411}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.70710677, z: -0.70710677, w: 0}
-  m_LocalPosition: {x: 0.0003, y: 0.0004, z: -0.51276785}
+  m_LocalPosition: {x: 0.0003, y: -0.000000013358658, z: -0.51276785}
   m_LocalScale: {x: 0.093972616, y: 1, z: 0.09207325}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -144,7 +144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8f6cc6a8aae936841ac8f67738711088, type: 2}
+  - {fileID: 2100000, guid: ced05e432f83997459dff29f16d9afa3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -301,7 +301,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -316,7 +316,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 26.991467
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: 0

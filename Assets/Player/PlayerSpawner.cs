@@ -59,7 +59,7 @@ public class PlayerSpawner : MonoBehaviour
             if (i == _fakePhotoSelected1 || i == _fakePhotoSelected2 || i == _fakePhotoSelected3 || i == _fakePhotoSelected4)
             {
                 fakePhotoSpawnPoints[i].SetTrigger("Sortir");
-                StartCoroutine(ResetScreen(i));
+                StartCoroutine(HideFakeCams(i));
             }
         }
     }
