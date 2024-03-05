@@ -5,20 +5,26 @@ using UnityEngine.UI;
 
 public class LeaderbordFinal : MonoBehaviour
 {
-    public LeaderboardManager lm;
     public List<Text> names;
     public List<Text> scores;
+    public GameObject display;
     void Start()
     {
-        if (lm.nbrPlayer == 3)
+
+        if (GameData.NbrPlayer == 2)
         {
             names.RemoveAt(2);
             scores.RemoveAt(2);
+            display.SetActive(false);
+        }
+        else
+        {
+            display.SetActive(true);
         }
 
-        for (int i = 0; i < lm.scoreboard.Count; i++)
+        for (int i = 0; i < GameData.Scoreboard.Count; i++)
         {
-            var item = lm.scoreboard[i];
+            var item = GameData.Scoreboard[i];
 
             if (i < names.Count)
             {

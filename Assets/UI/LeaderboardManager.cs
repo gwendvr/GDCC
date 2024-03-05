@@ -22,6 +22,7 @@ public class LeaderboardManager : MonoBehaviour
 
     public void UpdateScore()
     {
+        scoreboard.Clear();
         foreach (GameObject player in players)
         {
             int score = player.GetComponent<Score>().ScorePlayer;
@@ -31,6 +32,9 @@ public class LeaderboardManager : MonoBehaviour
         }
 
         scoreboard.Sort((x, y) => y.Item2.CompareTo(x.Item2));
+
+        GameData.Scoreboard = new List<(string, int)>(scoreboard);
+        GameData.NbrPlayer = nbrPlayer;
 
         for (int i = 0; i < scoreboard.Count; i++)
         {
