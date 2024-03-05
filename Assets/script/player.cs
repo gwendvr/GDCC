@@ -5,24 +5,15 @@ using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
-    public int id;
+    protected static int allId=0;
+    protected int id;
     public int score;
     public GameObject UIInteract;
     public GameObject textDone;
     public Slider progressBar;
     public bool canInteract;
     //public bool isInteracting;
-    public bool isChargingPhoto;
-    public List<GameObject> listOtherPlayer;
-    public List<SkinnedMeshRenderer> myMeshRenderer;
     private IInteract currentInteraction;
-    public Camera myCamera;
-    public int cameraReach;
-    public bool isAlive;
-    public bool cooldownPhoto;
-    public bool isFlashing;
-    public Light flash;
-
 
     void Start()
     {
@@ -30,23 +21,16 @@ public class player : MonoBehaviour
         progressBar.gameObject.SetActive(false);
         canInteract = false;
         //isInteracting = false;
+        allId += 1;
+        id = allId;
         score = 0;
-        isAlive=true;
-        isChargingPhoto = true;
-        cooldownPhoto = true;
-        isFlashing = false;
-        flash.intensity = 0;
     }
 
     void Update()
     {
-        if (isAlive == false)
+        if(canInteract&& Input.GetKey(KeyCode.E))
         {
-            return;
-        }
-        if (canInteract && Input.GetKey(KeyCode.E))
-        {
-            if (currentInteraction.available == true)
+            if(currentInteraction.available == true)
             {
                 progressBar.gameObject.SetActive(true);
                 //isInteracting = true;
@@ -68,10 +52,7 @@ public class player : MonoBehaviour
             textDone.gameObject.SetActive(false);
             progressBar.value = 0;
         }
-        if ( isChargingPhoto&& Input.GetMouseButtonDown(0)&&cooldownPhoto)
-        {
-            takePhoto();
-        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -100,73 +81,4 @@ public class player : MonoBehaviour
         currentInteraction.available = false; 
         progressBar.gameObject.SetActive(false);
     }
-
-    public void takePhoto()
-    {
-        for(int i=0; i < listOtherPlayer.Count; i++)
-        {
-            player otherplayer = listOtherPlayer[i].GetComponentInChildren<player>();
-            Vector3 pos = myCamera.WorldToViewportPoint(otherplayer.myMeshRenderer[0].transform.position);
-            RaycastHit rh = new RaycastHit();
-            bool rc = Physics.Raycast(this.transform.position, otherplayer.transform.position - this.transform.position, out rh,100,512);
-            if (rc == true) {
-                Debug.Log("Raycast colliding with " + rh.collider.gameObject.tag);
-                if (pos.x > 0 && pos.x < 1 && pos.y > 0 && pos.y < 1 && pos.z > 0 && Mathf.Abs((otherplayer.transform.position - this.transform.position).magnitude) < cameraReach && rh.collider.gameObject.tag.Equals("Player"))
-                {
-                    otherplayer.die();
-                    StartCoroutine(flashingTarget(otherplayer));
-                }
-            }
-            
-        }
-        StartCoroutine(flashing());
-        StartCoroutine(cooldownNewPhoto());
-    }
-
-    public void die()
-    {
-        isAlive = false;
-        canInteract=false;
-        flash.intensity = 0;
-        progressBar.value = 0;
-    }
-
-    IEnumerator cooldownNewPhoto()
-    {
-        cooldownPhoto = false;
-        yield return new WaitForSeconds(5);
-        cooldownPhoto = true;
-    }
-
-    IEnumerator flashing()
-    {
-        isFlashing = true;
-        flash.intensity = 10;
-        yield return new WaitForSeconds(1.5f);
-        flash.intensity = 0;
-        isFlashing = false;
-    }
-    IEnumerator flashingTarget(player p)
-    {
-        isFlashing = true;
-        flash.intensity = 10;
-        yield return new WaitForSeconds(1.5f);
-        flash.intensity = 0;
-        p.gameObject.transform.parent.gameObject.transform.parent.gameObject.SetActive(false);
-        isFlashing = false;
-    }
-
-    /*private void setupOtherPlayers()
-    {
-        listOtherPlayer = new List<GameObject>();
-        int nbPlayers= players.transform.childCount;
-        for(int i = 0; i < nbPlayers; i++)
-        {
-            Debug.Log("player id: " + players.transform.GetChild(i).GetChild(0).GetChild(1).GetComponent<player>().id);
-            if (players.transform.GetChild(i).GetChild(0).GetChild(1).GetComponent<player>().id!=this.id)
-            {
-                listOtherPlayer.Add(players.transform.GetChild(i).gameObject);
-            }
-        }
-    }*/
 }

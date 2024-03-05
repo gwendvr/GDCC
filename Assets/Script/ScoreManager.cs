@@ -74,20 +74,6 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    // pour le tableau de fin 
-    void UpdateScoreDisplay()
-    {
-        
-        string displayText = "";
-        foreach (var player in players)
-        {
-            if (player.TryGetComponent<Score>(out Score scoreComponent))
-            {
-                displayText += player.name + ": " + scoreComponent.ScorePlayer + "\n";
-            }
-        }
-    }
-
     public void TwoPlayer()
     {
         players.RemoveAt(3);
