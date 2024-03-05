@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EventChaos : MonoBehaviour
 {
     public Light[] LightMap;
-    public GameObject[] Bot, Player;
+    public List<GameObject> Bot, PlayerCam;
     public Text Txt;
 
     private bool EventOnGoing = false;
@@ -54,7 +54,7 @@ public class EventChaos : MonoBehaviour
                     eventName = "Nan gé pas buuuuu !";
                     StartCoroutine(ShowEventName());
                     EventOnGoing = true;
-                    foreach (GameObject cam in Player)
+                    foreach (GameObject cam in PlayerCam)
                     {
                         StartCoroutine(DrunkEffectCoroutine(cam)); // Démarre l'effet pour chaque caméra
                     }
@@ -94,9 +94,11 @@ public class EventChaos : MonoBehaviour
     
     IEnumerator ShowEventName()
     {
+        Txt.gameObject.SetActive(true);
         Txt.text = eventName; 
         yield return new WaitForSeconds(2f);
         Txt.text = "";
+        Txt.gameObject.SetActive(false);
     }
 
     IEnumerator DarkEvent()
@@ -116,12 +118,12 @@ public class EventChaos : MonoBehaviour
 
     IEnumerator SpeedEvent()
     {
-        for (int i = 0; i < Bot.Length; i++)
+        for (int i = 0; i < Bot.Count; i++)
         {
             Bot[i].GetComponent<IA>().speedMultiplier += 20;
         }
         yield return new WaitForSeconds(30);
-        for (int i = 0; i < Bot.Length; i++)
+        for (int i = 0; i < Bot.Count; i++)
         {
             Bot[i].GetComponent<IA>().speedMultiplier -= 20;
         }
@@ -141,7 +143,7 @@ public class EventChaos : MonoBehaviour
             List<Vector3> originalPositions = new List<Vector3>(); 
 
             
-            foreach (GameObject cam in Player)
+            foreach (GameObject cam in PlayerCam)
             {
                 originalPositions.Add(cam.transform.position);
             }
@@ -153,9 +155,9 @@ public class EventChaos : MonoBehaviour
                 float x = Random.Range(-1f, 1f) * magnitude;
                 float y = Random.Range(-1f, 1f) * magnitude;
 
-                for (int i = 0; i < Player.Length; i++)
+                for (int i = 0; i < PlayerCam.Count; i++)
                 {
-                    GameObject cam = Player[i];
+                    GameObject cam = PlayerCam[i];
                     Vector3 originalPosition = originalPositions[i];
                     cam.transform.position = new Vector3(originalPosition.x + x, originalPosition.y + y, originalPosition.z);
                 }
@@ -165,9 +167,9 @@ public class EventChaos : MonoBehaviour
             }
 
             
-            for (int i = 0; i < Player.Length; i++)
+            for (int i = 0; i < PlayerCam.Count; i++)
             {
-                GameObject cam = Player[i];
+                GameObject cam = PlayerCam[i];
                 cam.transform.position = originalPositions[i];
             }
             EventOnGoing = false;
@@ -202,5 +204,14 @@ public class EventChaos : MonoBehaviour
         {
             yield return new WaitForSeconds(30);
             EventOnGoing = false;
+        }
+        public void TwoPlayer()
+        {
+            PlayerCam.RemoveAt(3);
+            PlayerCam.RemoveAt(2);
+        }
+        public void ThreePlayer()
+        {
+            PlayerCam.RemoveAt(3);
         }
 }
