@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="03c55042-b807-4f99-be0e-d6b8815f3cb6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GDCC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDCC/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PhotoMode/Textures/Cam1POV.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhotoMode/Textures/Cam1POV.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PhotoMode/Textures/Cam2POV.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhotoMode/Textures/Cam2POV.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PhotoMode/Textures/Cam3POV.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhotoMode/Textures/Cam3POV.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PhotoMode/Textures/Cam4POV.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PhotoMode/Textures/Cam4POV.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/EventChaos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/EventChaos.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +31,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Victory&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;EventAleatoir2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -102,6 +98,8 @@
       <workItem from="1709545999133" duration="206000" />
       <workItem from="1709548522116" duration="322000" />
       <workItem from="1709548859243" duration="3182000" />
+      <workItem from="1709557596047" duration="529000" />
+      <workItem from="1709568065610" duration="342000" />
     </task>
     <servers />
   </component>
