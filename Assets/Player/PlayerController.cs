@@ -10,7 +10,7 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    public float sensitivity = 5f;
+    public float sensitivity = 20f;
     public Camera cam;
     Vector2 moveCam;
     public bool onPhotoMode = false;
@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public Animator photoAnim;
     public UltiBehaviour ulti;
     public int ID;
+    public player playerInteraction;
 
     //Stay Task Variable
     private StayTaskPoint stayPoint;
@@ -34,17 +35,20 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Rotate(0, moveCam.y  * sensitivity * Time.deltaTime, 0);
-        Mathf.Clamp(moveCam.x, -80, 80);
+        transform.localEulerAngles += new Vector3(0, moveCam.x * sensitivity * Time.deltaTime, 0);
+        cam.transform.localEulerAngles -= new Vector3(moveCam.y * sensitivity * Time.deltaTime, 0, 0);
+        /*
+        //transform.Rotate(0, moveCam.y  * sensitivity * Time.deltaTime, 0);
         if (moveCam.x < 0 && cam.transform.rotation.x < 80)
         {
-            cam.transform.Rotate(moveCam.x * sensitivity * Time.deltaTime, 0, 0);
+            //cam.transform.Rotate(moveCam.x * sensitivity * Time.deltaTime, 0, 0);
         }
         else if (moveCam.x > 0 && cam.transform.rotation.x > -80)
         {
-            cam.transform.Rotate(moveCam.x * sensitivity * Time.deltaTime, 0, 0);
+            cam.transform.localEulerAngles = new Vector3(moveCam.x, 0, 0);
+            //cam.transform.Rotate(moveCam.x * sensitivity * Time.deltaTime, 0, 0);
         }
-        moveCam = new Vector2(0, 0);
+        //moveCam = new Vector2(0, 0);*/
 
         if(inStayTask)
         {
@@ -56,9 +60,13 @@ public class PlayerController : MonoBehaviour
                 
             }
             else stayPoint.timeToStay -= Time.deltaTime;
-            print(stayPoint.timeToStay);
         }
 
+    }
+
+    public void OnMoveCam(InputValue inputValue)
+    {
+        moveCam = inputValue.Get<Vector2>();
     }
 
 

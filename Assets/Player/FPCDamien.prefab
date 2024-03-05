@@ -1965,7 +1965,7 @@ GameObject:
   - component: {fileID: 6066128859176606950}
   - component: {fileID: 6027164267477046414}
   m_Layer: 0
-  m_Name: FirstPersonController
+  m_Name: FPCDamien
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2052,13 +2052,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dbc40ba9f167c9498ba3b4d818c6ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 5
+  sensitivity: 100
   cam: {fileID: 1866093319889897059}
   onPhotoMode: 0
   photoDevice: {fileID: 8031804582802692722}
   photoAnim: {fileID: 7319113023474874762}
   ulti: {fileID: 4392501305285400414}
   ID: 0
+  playerInteraction: {fileID: 830338521943859428}
+  firstPersonController: {fileID: 6066128859176606950}
 --- !u!136 &7297814571010010651
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2141,7 +2143,7 @@ MonoBehaviour:
   maxVelocityChange: 10
   enableSprint: 1
   unlimitedSprint: 0
-  sprintKey: 304
+  sprintKey: 340
   sprintSpeed: 7
   sprintDuration: 5
   sprintCooldown: 0.5
@@ -2154,11 +2156,11 @@ MonoBehaviour:
   sprintBarWidthPercent: 0.3
   sprintBarHeightPercent: 0.02
   enableJump: 1
-  jumpKey: 32
+  jumpKey: 331
   jumpPower: 5
   enableCrouch: 1
   holdToCrouch: 1
-  crouchKey: 306
+  crouchKey: 332
   crouchHeight: 0.75
   speedReduction: 0.5
   enableHeadBob: 1
@@ -2317,6 +2319,10 @@ PrefabInstance:
     - target: {fileID: 505793172189410298, guid: 95c02d19c31fe9843bdb9be029156160, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249206421088730851, guid: 95c02d19c31fe9843bdb9be029156160, type: 3}
+      propertyPath: sharedProfile
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7293390806403989569, guid: 95c02d19c31fe9843bdb9be029156160, type: 3}
       propertyPath: m_Name

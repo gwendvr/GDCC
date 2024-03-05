@@ -28,24 +28,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             ""id"": ""dcaca6d6-6649-40f3-a354-eb74f4747073"",
             ""actions"": [
                 {
-                    ""name"": ""MoveCamUpDown"",
-                    ""type"": ""Value"",
-                    ""id"": ""4d83e3c8-a0a9-4892-bdce-c81fc5723202"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""MoveCamLeftRight"",
-                    ""type"": ""Value"",
-                    ""id"": ""732706ca-a668-4ee4-92be-4e760433e400"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""PhotoMode"",
                     ""type"": ""Button"",
                     ""id"": ""0f0485e0-3753-46a6-87ff-8a6f18356f3f"",
@@ -64,86 +46,31 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""AddUltiProgression"",
-                    ""type"": ""Button"",
-                    ""id"": ""02e54a86-36f5-47c9-b416-5c8592fa426f"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""MoveCam"",
+                    ""type"": ""Value"",
+                    ""id"": ""7942d8f4-4a9d-4dbd-8e4b-6cc11847c605"",
+                    ""expectedControlType"": ""Stick"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""85b45d66-47e4-4a88-a120-7e3ef8b6faf9"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""71d3d88e-b3ee-4f6f-b413-2bf9fd67d09e"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MoveCamUpDown"",
-                    ""isComposite"": true,
+                    ""action"": ""PhotoMode"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""411f7650-3661-4615-b25c-833c117beac1"",
-                    ""path"": ""<Mouse>/delta/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveCamUpDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""839db2d5-29e2-4102-ad1d-58a44ce8e4ff"",
-                    ""path"": ""<Mouse>/delta/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveCamUpDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""1a4ff79a-6074-48e5-9ffc-a1d587f77612"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveCamLeftRight"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""c3593446-16b5-4189-9abd-4fd161b0f4b4"",
-                    ""path"": ""<Mouse>/delta/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveCamLeftRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""cbb477b6-ab90-4927-910b-723cc48ff903"",
-                    ""path"": ""<Mouse>/delta/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveCamLeftRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""71d3d88e-b3ee-4f6f-b413-2bf9fd67d09e"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""id"": ""6d978c1f-60d9-48bf-bae8-25e7d0d5d9d6"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -154,7 +81,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""dbd06a44-5ee5-4e0b-8ede-cd90109be8bd"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -164,12 +91,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f764d7aa-bac2-4667-bf12-f27fd40f3e3e"",
-                    ""path"": ""<Keyboard>/u"",
+                    ""id"": ""26e53b94-e3a6-4e5c-a057-5b86a39c7bd9"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AddUltiProgression"",
+                    ""action"": ""MoveCam"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -180,11 +107,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
 }");
         // MainActions
         m_MainActions = asset.FindActionMap("MainActions", throwIfNotFound: true);
-        m_MainActions_MoveCamUpDown = m_MainActions.FindAction("MoveCamUpDown", throwIfNotFound: true);
-        m_MainActions_MoveCamLeftRight = m_MainActions.FindAction("MoveCamLeftRight", throwIfNotFound: true);
         m_MainActions_PhotoMode = m_MainActions.FindAction("PhotoMode", throwIfNotFound: true);
         m_MainActions_Ulti = m_MainActions.FindAction("Ulti", throwIfNotFound: true);
-        m_MainActions_AddUltiProgression = m_MainActions.FindAction("AddUltiProgression", throwIfNotFound: true);
+        m_MainActions_MoveCam = m_MainActions.FindAction("MoveCam", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -246,20 +171,16 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     // MainActions
     private readonly InputActionMap m_MainActions;
     private List<IMainActionsActions> m_MainActionsActionsCallbackInterfaces = new List<IMainActionsActions>();
-    private readonly InputAction m_MainActions_MoveCamUpDown;
-    private readonly InputAction m_MainActions_MoveCamLeftRight;
     private readonly InputAction m_MainActions_PhotoMode;
     private readonly InputAction m_MainActions_Ulti;
-    private readonly InputAction m_MainActions_AddUltiProgression;
+    private readonly InputAction m_MainActions_MoveCam;
     public struct MainActionsActions
     {
         private @PlayerInputs m_Wrapper;
         public MainActionsActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MoveCamUpDown => m_Wrapper.m_MainActions_MoveCamUpDown;
-        public InputAction @MoveCamLeftRight => m_Wrapper.m_MainActions_MoveCamLeftRight;
         public InputAction @PhotoMode => m_Wrapper.m_MainActions_PhotoMode;
         public InputAction @Ulti => m_Wrapper.m_MainActions_Ulti;
-        public InputAction @AddUltiProgression => m_Wrapper.m_MainActions_AddUltiProgression;
+        public InputAction @MoveCam => m_Wrapper.m_MainActions_MoveCam;
         public InputActionMap Get() { return m_Wrapper.m_MainActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -269,40 +190,28 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_MainActionsActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_MainActionsActionsCallbackInterfaces.Add(instance);
-            @MoveCamUpDown.started += instance.OnMoveCamUpDown;
-            @MoveCamUpDown.performed += instance.OnMoveCamUpDown;
-            @MoveCamUpDown.canceled += instance.OnMoveCamUpDown;
-            @MoveCamLeftRight.started += instance.OnMoveCamLeftRight;
-            @MoveCamLeftRight.performed += instance.OnMoveCamLeftRight;
-            @MoveCamLeftRight.canceled += instance.OnMoveCamLeftRight;
             @PhotoMode.started += instance.OnPhotoMode;
             @PhotoMode.performed += instance.OnPhotoMode;
             @PhotoMode.canceled += instance.OnPhotoMode;
             @Ulti.started += instance.OnUlti;
             @Ulti.performed += instance.OnUlti;
             @Ulti.canceled += instance.OnUlti;
-            @AddUltiProgression.started += instance.OnAddUltiProgression;
-            @AddUltiProgression.performed += instance.OnAddUltiProgression;
-            @AddUltiProgression.canceled += instance.OnAddUltiProgression;
+            @MoveCam.started += instance.OnMoveCam;
+            @MoveCam.performed += instance.OnMoveCam;
+            @MoveCam.canceled += instance.OnMoveCam;
         }
 
         private void UnregisterCallbacks(IMainActionsActions instance)
         {
-            @MoveCamUpDown.started -= instance.OnMoveCamUpDown;
-            @MoveCamUpDown.performed -= instance.OnMoveCamUpDown;
-            @MoveCamUpDown.canceled -= instance.OnMoveCamUpDown;
-            @MoveCamLeftRight.started -= instance.OnMoveCamLeftRight;
-            @MoveCamLeftRight.performed -= instance.OnMoveCamLeftRight;
-            @MoveCamLeftRight.canceled -= instance.OnMoveCamLeftRight;
             @PhotoMode.started -= instance.OnPhotoMode;
             @PhotoMode.performed -= instance.OnPhotoMode;
             @PhotoMode.canceled -= instance.OnPhotoMode;
             @Ulti.started -= instance.OnUlti;
             @Ulti.performed -= instance.OnUlti;
             @Ulti.canceled -= instance.OnUlti;
-            @AddUltiProgression.started -= instance.OnAddUltiProgression;
-            @AddUltiProgression.performed -= instance.OnAddUltiProgression;
-            @AddUltiProgression.canceled -= instance.OnAddUltiProgression;
+            @MoveCam.started -= instance.OnMoveCam;
+            @MoveCam.performed -= instance.OnMoveCam;
+            @MoveCam.canceled -= instance.OnMoveCam;
         }
 
         public void RemoveCallbacks(IMainActionsActions instance)
@@ -322,10 +231,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public MainActionsActions @MainActions => new MainActionsActions(this);
     public interface IMainActionsActions
     {
-        void OnMoveCamUpDown(InputAction.CallbackContext context);
-        void OnMoveCamLeftRight(InputAction.CallbackContext context);
         void OnPhotoMode(InputAction.CallbackContext context);
         void OnUlti(InputAction.CallbackContext context);
-        void OnAddUltiProgression(InputAction.CallbackContext context);
+        void OnMoveCam(InputAction.CallbackContext context);
     }
 }

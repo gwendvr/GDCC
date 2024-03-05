@@ -12,6 +12,7 @@ public class player : MonoBehaviour
     public GameObject textDone;
     public Slider progressBar;
     public bool canInteract;
+    public bool tryToInteract;
     public PlayerController playerController;
     //public bool isInteracting;
     private IInteract currentInteraction;
@@ -29,31 +30,27 @@ public class player : MonoBehaviour
 
     void Update()
     {
-        if(canInteract&& Input.GetKey(KeyCode.E))
+        if (canInteract && Input.GetKey(KeyCode.JoystickButton0))
         {
-            if(currentInteraction.available == true)
+            progressBar.gameObject.SetActive(true);
+            //isInteracting = true;
+            progressBar.value += 0.025f;
+            if (progressBar.value == progressBar.maxValue)
             {
-                progressBar.gameObject.SetActive(true);
-                //isInteracting = true;
-                progressBar.value += 0.025f;
-                if (progressBar.value == progressBar.maxValue)
-                {
-                    clearTask();
-                }
+                clearTask();
+                canInteract=false;
             }
-            else
-            {
-                textDone.gameObject.SetActive(true);
-            }
-
         }
-        if (!Input.GetKey(KeyCode.E))
+        else
+        {
+            textDone.gameObject.SetActive(true);
+        }
+        if (!Input.GetKey(KeyCode.JoystickButton0))
         {
             progressBar.gameObject.SetActive(false);
             textDone.gameObject.SetActive(false);
             progressBar.value = 0;
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -71,8 +68,11 @@ public class player : MonoBehaviour
     {
         if (canInteract)
         {
-            UIInteract.SetActive(false);
-            canInteract = false;
+            if (other.gameObject.TryGetComponent<IInteract>(out IInteract interact))
+            {
+                UIInteract.SetActive(false);
+                canInteract = false;
+            }
         }
     }
     

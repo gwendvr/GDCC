@@ -16,6 +16,8 @@ using UnityEngine.UI;
 
 public class FirstPersonController : MonoBehaviour
 {
+    [Range(1,4)]
+    public int idPlayer;
     private Rigidbody rb;
 
     #region Camera Movement Variables
@@ -553,6 +555,8 @@ public class FirstPersonController : MonoBehaviour
         GUILayout.Label("By Jess Case", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 12 });
         GUILayout.Label("version 1.0.1", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 12 });
         EditorGUILayout.Space();
+
+        fpc.idPlayer = (int)EditorGUILayout.Slider(new GUIContent("ID", "The camera’s view angle. Changes the player camera directly."), fpc.idPlayer, 1, 4);
 
         #region Camera Setup
 
