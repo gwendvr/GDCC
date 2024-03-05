@@ -134,6 +134,7 @@ MonoBehaviour:
   textDone: {fileID: 6488624425022352957}
   progressBar: {fileID: 628541645287443886}
   canInteract: 0
+  tryToInteract: 0
   playerController: {fileID: 7500015824024230004}
 --- !u!1 &1091888199037048911
 GameObject:
@@ -2123,6 +2124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90ba6530d9bfda47abb4610956b2f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idPlayer: 1
   playerCamera: {fileID: 1866093319889897059}
   fov: 60
   invertCamera: 0
@@ -2149,7 +2151,7 @@ MonoBehaviour:
   sprintCooldown: 0.5
   sprintFOV: 90
   sprintFOVStepTime: 4
-  useSprintBar: 1
+  useSprintBar: 0
   hideBarWhenFull: 1
   sprintBarBG: {fileID: 4805372352167813817}
   sprintBar: {fileID: 139761266296038015}
@@ -2192,9 +2194,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: MainActions
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Player1
+  m_DefaultActionMap: MainActions1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 1866093319889897059}
 --- !u!1 &9129745324816137885

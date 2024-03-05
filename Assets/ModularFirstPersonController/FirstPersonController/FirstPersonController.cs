@@ -209,16 +209,16 @@ public class FirstPersonController : MonoBehaviour
         // Control camera movement
         if(cameraCanMove)
         {
-            yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
+            yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X" + idPlayer) * mouseSensitivity;
 
             if (!invertCamera)
             {
-                pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
+                pitch -= mouseSensitivity * Input.GetAxis("Mouse Y" + idPlayer);
             }
             else
             {
                 // Inverted Y
-                pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
+                pitch += mouseSensitivity * Input.GetAxis("Mouse Y" + idPlayer);
             }
 
             // Clamp pitch between lookAngle
@@ -328,7 +328,7 @@ public class FirstPersonController : MonoBehaviour
         #region Jump
 
         // Gets input and calls jump method
-        if(enableJump && Input.GetKeyDown(jumpKey) && isGrounded)
+        if(enableJump && Input.GetButtonDown("Jump" + idPlayer) && isGrounded)
         {
             Jump();
         }
@@ -339,17 +339,17 @@ public class FirstPersonController : MonoBehaviour
 
         if (enableCrouch)
         {
-            if(Input.GetKeyDown(crouchKey) && !holdToCrouch)
+            if(Input.GetButtonDown("Crouch" + idPlayer) && !holdToCrouch)
             {
                 Crouch();
             }
             
-            if(Input.GetKeyDown(crouchKey) && holdToCrouch)
+            if(Input.GetButtonDown("Crouch" + idPlayer) && holdToCrouch)
             {
                 isCrouched = false;
                 Crouch();
             }
-            else if(Input.GetKeyUp(crouchKey) && holdToCrouch)
+            else if(Input.GetButtonUp("Crouch" + idPlayer) && holdToCrouch)
             {
                 isCrouched = true;
                 Crouch();
@@ -373,7 +373,7 @@ public class FirstPersonController : MonoBehaviour
         if (playerCanMove)
         {
             // Calculate how fast we should be moving
-            Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal" + idPlayer), 0, Input.GetAxis("Vertical" + idPlayer));
 
             // Checks if player is walking and isGrounded
             // Will allow head bob
@@ -387,7 +387,7 @@ public class FirstPersonController : MonoBehaviour
             }
 
             // All movement calculations shile sprint is active
-            if (enableSprint && Input.GetKey(sprintKey) && sprintRemaining > 0f && !isSprintCooldown)
+            if (enableSprint && Input.GetButton("Sprint" + idPlayer) && sprintRemaining > 0f && !isSprintCooldown)
             {
                 targetVelocity = transform.TransformDirection(targetVelocity) * sprintSpeed;
 

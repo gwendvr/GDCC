@@ -2,7 +2,86 @@
     "name": "PlayerInputs",
     "maps": [
         {
-            "name": "MainActions",
+            "name": "MainActions1",
+            "id": "a3d263f2-3795-42c2-87d9-60170b92cf46",
+            "actions": [
+                {
+                    "name": "PhotoMode",
+                    "type": "Button",
+                    "id": "32561b6c-27b8-4119-aa33-28e2b8917c3e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ulti",
+                    "type": "Button",
+                    "id": "820c9128-7d03-404d-b162-5b04542aa3f2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MoveCam",
+                    "type": "Value",
+                    "id": "4a13158c-b754-45e0-b21b-b3b919230fea",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "82b3d03c-0f0f-4a26-a3cf-82c8c0f185f6",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player1;Player2;Player3;Player4",
+                    "action": "PhotoMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a412710f-33c9-4aa1-aa28-da04d88252f3",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player1;Player2;Player3;Player4",
+                    "action": "PhotoMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "38f4ac03-da56-449d-beba-c1926e744bd6",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player1;Player2;Player3;Player4",
+                    "action": "Ulti",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "31ee73bf-0b48-4f85-80be-c16cf9d07f0d",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player1;Player2;Player3;Player4",
+                    "action": "MoveCam",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "MainActions2",
             "id": "dcaca6d6-6649-40f3-a354-eb74f4747073",
             "actions": [
                 {
@@ -79,7 +158,210 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MainActions3",
+            "id": "1231ec4a-14cf-4440-94d6-c572598f0527",
+            "actions": [
+                {
+                    "name": "PhotoMode",
+                    "type": "Button",
+                    "id": "b77af0d4-4021-4db1-9c0d-f6cb639da709",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ulti",
+                    "type": "Button",
+                    "id": "ee2930fa-dbb5-4818-a24d-788768441a93",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MoveCam",
+                    "type": "Value",
+                    "id": "7ee44321-6b63-4f06-aa97-b8cbe3d2fab9",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "109f61c5-9941-4684-9cc9-4e22d178ece5",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhotoMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "438c4713-6e18-4649-9009-214165e371b9",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhotoMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "571f66c9-3724-4fa6-acba-9cb93c4ff232",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ulti",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c31566a3-b5e7-403e-b75f-08cc568e634f",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveCam",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "MainActions4",
+            "id": "ede1f408-1770-406e-8617-d290ed6b0d0d",
+            "actions": [
+                {
+                    "name": "PhotoMode",
+                    "type": "Button",
+                    "id": "6a6b05bb-6ad0-4ca2-8c20-e3da3c7a7934",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ulti",
+                    "type": "Button",
+                    "id": "bce8934b-ee36-47a9-aa93-8ab9aac020b0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MoveCam",
+                    "type": "Value",
+                    "id": "f92eccc2-0c6a-42a2-a77a-0d9b4cce2ed0",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2e03ba48-0c9b-4ce1-acb1-f44a1d1afdfb",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhotoMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "055f62cd-8002-431b-b9bc-150b8f0d74c9",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhotoMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8fd3c4d0-e62c-4cf3-be00-6234c929d99e",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ulti",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "36c9f055-437a-4a28-94cf-bc75dfa37de2",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveCam",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Player1",
+            "bindingGroup": "Player1",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Player2",
+            "bindingGroup": "Player2",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Player3",
+            "bindingGroup": "Player3",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Player4",
+            "bindingGroup": "Player4",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
