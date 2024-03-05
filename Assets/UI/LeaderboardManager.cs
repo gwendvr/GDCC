@@ -9,6 +9,7 @@ public class LeaderboardManager : MonoBehaviour
     public List<Text> names;
     public List<Text> scores;
     public GameObject templateLb;
+    public int nbrPlayer = 4;
     void Start()
     {
         
@@ -49,6 +50,7 @@ public class LeaderboardManager : MonoBehaviour
 
     public void TwoPlayer()
     {
+        nbrPlayer = 2;
         players.RemoveAt(3);
         players.RemoveAt(2);
         names.RemoveAt(3);
@@ -62,6 +64,7 @@ public class LeaderboardManager : MonoBehaviour
 
     public void ThreePlayer()
     {
+        nbrPlayer = 3;
         players.RemoveAt(3);
         names.RemoveAt(3);
         scores.RemoveAt(3);
