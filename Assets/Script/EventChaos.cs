@@ -24,7 +24,7 @@ public class EventChaos : MonoBehaviour
         if (!EventOnGoing)
         {
             
-            EventId = Random.Range(0, 7);
+            EventId = Random.Range(0, 8);
             
             switch (EventId)
             {
@@ -139,39 +139,39 @@ public class EventChaos : MonoBehaviour
     }
 
     IEnumerator Earthquake()
+    {
+        List<Vector3> originalPositions = new List<Vector3>();
+
+        foreach (GameObject cam in PlayerCam)
         {
-            List<Vector3> originalPositions = new List<Vector3>(); 
+            originalPositions.Add(cam.transform.position);
+        }
 
-            
-            foreach (GameObject cam in PlayerCam)
-            {
-                originalPositions.Add(cam.transform.position);
-            }
+        float elapsed = 0.0f;
 
-            float elapsed = 0.0f;
+        while (elapsed < 30)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
 
-            while (elapsed < 30)
-            {
-                float x = Random.Range(-1f, 1f) * magnitude;
-                float y = Random.Range(-1f, 1f) * magnitude;
-
-                for (int i = 0; i < PlayerCam.Count; i++)
-                {
-                    GameObject cam = PlayerCam[i];
-                    Vector3 originalPosition = originalPositions[i];
-                    cam.transform.position = new Vector3(originalPosition.x + x, originalPosition.y + y, originalPosition.z);
-                }
-
-                elapsed += Time.deltaTime;
-                yield return null;
-            }
-
-            
             for (int i = 0; i < PlayerCam.Count; i++)
             {
                 GameObject cam = PlayerCam[i];
-                cam.transform.position = originalPositions[i];
+                Vector3 originalPosition = originalPositions[i];
+                cam.transform.position = new Vector3(originalPosition.x + x, originalPosition.y + y, originalPosition.z);
             }
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Remettre les caméras à leur position originale
+        for (int i = 0; i < PlayerCam.Count; i++)
+        {
+            GameObject cam = PlayerCam[i];
+            Vector3 originalPosition = originalPositions[i];
+            cam.transform.position = originalPosition;
+        }
             EventOnGoing = false;
         }
         IEnumerator DrunkEffectCoroutine(GameObject cam)

@@ -2123,11 +2123,11 @@ GameObject:
   - component: {fileID: 8144841027194988138}
   - component: {fileID: 2193419241652358898}
   - component: {fileID: 7500015824024230004}
-  - component: {fileID: 7297814571010010651}
   - component: {fileID: 5758840026367021295}
   - component: {fileID: 6066128859176606950}
   - component: {fileID: 6027164267477046414}
   - component: {fileID: 470049174494441754}
+  - component: {fileID: 6280889469176476266}
   m_Layer: 0
   m_Name: FPCDamien 1
   m_TagString: Player
@@ -2225,29 +2225,6 @@ MonoBehaviour:
   ID: 0
   playerInteraction: {fileID: 0}
   firstPersonController: {fileID: 0}
---- !u!136 &7297814571010010651
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9089092132475098556}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5758840026367021295
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2256,7 +2233,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9089092132475098556}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 40
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2377,6 +2354,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScorePlayer: 0
+--- !u!136 &6280889469176476266
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9089092132475098556}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.2, z: 0}
 --- !u!1 &9129745324816137885
 GameObject:
   m_ObjectHideFlags: 0
