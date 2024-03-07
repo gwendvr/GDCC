@@ -774,11 +774,11 @@ PrefabInstance:
       objectReference: {fileID: -944628639613478452, guid: ac8160d4549e26048ad808112f590c85, type: 3}
     - target: {fileID: 6027164267477046414, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
       propertyPath: m_DefaultActionMap
-      value: MainActions1
+      value: a3d263f2-3795-42c2-87d9-60170b92cf46
       objectReference: {fileID: 0}
     - target: {fileID: 6027164267477046414, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Player1
+      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 6027164267477046414, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
@@ -1101,11 +1101,11 @@ PrefabInstance:
       objectReference: {fileID: -944628639613478452, guid: ac8160d4549e26048ad808112f590c85, type: 3}
     - target: {fileID: 6027164267477046414, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
       propertyPath: m_DefaultActionMap
-      value: MainActions1
+      value: a3d263f2-3795-42c2-87d9-60170b92cf46
       objectReference: {fileID: 0}
     - target: {fileID: 6027164267477046414, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Player1
+      value: Player4
       objectReference: {fileID: 0}
     - target: {fileID: 6027164267477046414, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
@@ -2994,11 +2994,11 @@ PrefabInstance:
       objectReference: {fileID: -944628639613478452, guid: ac8160d4549e26048ad808112f590c85, type: 3}
     - target: {fileID: 6027164267477046414, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
       propertyPath: m_DefaultActionMap
-      value: MainActions1
+      value: a3d263f2-3795-42c2-87d9-60170b92cf46
       objectReference: {fileID: 0}
     - target: {fileID: 6027164267477046414, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Player1
+      value: Player3
       objectReference: {fileID: 0}
     - target: {fileID: 6027164267477046414, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
@@ -5212,11 +5212,11 @@ PrefabInstance:
       objectReference: {fileID: -944628639613478452, guid: ac8160d4549e26048ad808112f590c85, type: 3}
     - target: {fileID: 6027164267477046414, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
       propertyPath: m_DefaultActionMap
-      value: MainActions1
+      value: a3d263f2-3795-42c2-87d9-60170b92cf46
       objectReference: {fileID: 0}
     - target: {fileID: 6027164267477046414, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Player1
+      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 6027164267477046414, guid: c03f8a0b22ca0b8498b8f028c17f8390, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes

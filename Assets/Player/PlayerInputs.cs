@@ -53,6 +53,51 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""83b124e1-f8a3-4c29-944e-afd37292ddf0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8231d62-302e-44d2-ae54-84b356b7d024"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""eee61495-8a09-4dcd-95cc-a584c28926f8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""396e46ba-0bf2-4b22-bc1a-9a378cce0ed9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""5519dce3-71ac-427d-b48d-dfc5e88aa7ab"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -62,7 +107,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player1;Player2;Player3;Player4"",
+                    ""groups"": ""Player1"",
                     ""action"": ""PhotoMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -73,7 +118,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player1;Player2;Player3;Player4"",
+                    ""groups"": ""Player2;Player1;Player3;Player4"",
                     ""action"": ""PhotoMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -84,7 +129,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Player1;Player2;Player3;Player4"",
+                    ""groups"": ""Player2;Player1;Player3;Player4"",
                     ""action"": ""Ulti"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -97,6 +142,61 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Player1;Player2;Player3;Player4"",
                     ""action"": ""MoveCam"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""45a77637-df49-4580-8fa5-228e4b17ca0c"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player1;Player2;Player3;Player4"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bbd4c1b1-e067-461e-8168-2ab578288943"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player4;Player2;Player1;Player3"",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""23be6c1e-c66a-4078-93e0-c684c4e7002a"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player4;Player3;Player2;Player1"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e367690c-3afc-4032-bf96-59a0e57905e8"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player1;Player2;Player3;Player4"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""204a6494-c887-4ea7-bbce-d2459f722461"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player1;Player2;Player3;Player4"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -347,7 +447,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": false,
+                    ""isOptional"": true,
                     ""isOR"": false
                 }
             ]
@@ -392,6 +492,11 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_MainActions1_PhotoMode = m_MainActions1.FindAction("PhotoMode", throwIfNotFound: true);
         m_MainActions1_Ulti = m_MainActions1.FindAction("Ulti", throwIfNotFound: true);
         m_MainActions1_MoveCam = m_MainActions1.FindAction("MoveCam", throwIfNotFound: true);
+        m_MainActions1_Sprint = m_MainActions1.FindAction("Sprint", throwIfNotFound: true);
+        m_MainActions1_Crouch = m_MainActions1.FindAction("Crouch", throwIfNotFound: true);
+        m_MainActions1_Jump = m_MainActions1.FindAction("Jump", throwIfNotFound: true);
+        m_MainActions1_Interact = m_MainActions1.FindAction("Interact", throwIfNotFound: true);
+        m_MainActions1_Move = m_MainActions1.FindAction("Move", throwIfNotFound: true);
         // MainActions2
         m_MainActions2 = asset.FindActionMap("MainActions2", throwIfNotFound: true);
         m_MainActions2_PhotoMode = m_MainActions2.FindAction("PhotoMode", throwIfNotFound: true);
@@ -471,6 +576,11 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_MainActions1_PhotoMode;
     private readonly InputAction m_MainActions1_Ulti;
     private readonly InputAction m_MainActions1_MoveCam;
+    private readonly InputAction m_MainActions1_Sprint;
+    private readonly InputAction m_MainActions1_Crouch;
+    private readonly InputAction m_MainActions1_Jump;
+    private readonly InputAction m_MainActions1_Interact;
+    private readonly InputAction m_MainActions1_Move;
     public struct MainActions1Actions
     {
         private @PlayerInputs m_Wrapper;
@@ -478,6 +588,11 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @PhotoMode => m_Wrapper.m_MainActions1_PhotoMode;
         public InputAction @Ulti => m_Wrapper.m_MainActions1_Ulti;
         public InputAction @MoveCam => m_Wrapper.m_MainActions1_MoveCam;
+        public InputAction @Sprint => m_Wrapper.m_MainActions1_Sprint;
+        public InputAction @Crouch => m_Wrapper.m_MainActions1_Crouch;
+        public InputAction @Jump => m_Wrapper.m_MainActions1_Jump;
+        public InputAction @Interact => m_Wrapper.m_MainActions1_Interact;
+        public InputAction @Move => m_Wrapper.m_MainActions1_Move;
         public InputActionMap Get() { return m_Wrapper.m_MainActions1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -496,6 +611,21 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @MoveCam.started += instance.OnMoveCam;
             @MoveCam.performed += instance.OnMoveCam;
             @MoveCam.canceled += instance.OnMoveCam;
+            @Sprint.started += instance.OnSprint;
+            @Sprint.performed += instance.OnSprint;
+            @Sprint.canceled += instance.OnSprint;
+            @Crouch.started += instance.OnCrouch;
+            @Crouch.performed += instance.OnCrouch;
+            @Crouch.canceled += instance.OnCrouch;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
         }
 
         private void UnregisterCallbacks(IMainActions1Actions instance)
@@ -509,6 +639,21 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @MoveCam.started -= instance.OnMoveCam;
             @MoveCam.performed -= instance.OnMoveCam;
             @MoveCam.canceled -= instance.OnMoveCam;
+            @Sprint.started -= instance.OnSprint;
+            @Sprint.performed -= instance.OnSprint;
+            @Sprint.canceled -= instance.OnSprint;
+            @Crouch.started -= instance.OnCrouch;
+            @Crouch.performed -= instance.OnCrouch;
+            @Crouch.canceled -= instance.OnCrouch;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
         }
 
         public void RemoveCallbacks(IMainActions1Actions instance)
@@ -753,6 +898,11 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnPhotoMode(InputAction.CallbackContext context);
         void OnUlti(InputAction.CallbackContext context);
         void OnMoveCam(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
     public interface IMainActions2Actions
     {
