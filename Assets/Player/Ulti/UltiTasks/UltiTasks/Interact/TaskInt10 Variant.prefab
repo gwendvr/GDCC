@@ -435,6 +435,10 @@ PrefabInstance:
       propertyPath: clearTime
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5294868062067194671, guid: 0784e6dd8d106084ca8d0a1ec26988cb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dd1c78886730c3445b5c7fcdf03ed095, type: 2}
     - target: {fileID: 5861680544753107403, guid: 0784e6dd8d106084ca8d0a1ec26988cb, type: 3}
       propertyPath: m_Name
       value: TaskInt10 Variant
