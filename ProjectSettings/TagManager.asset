@@ -6,6 +6,7 @@ TagManager:
   tags:
   - destination
   - Ground
+  - Staytask
   layers:
   - Default
   - TransparentFX

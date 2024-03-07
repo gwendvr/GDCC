@@ -8,14 +8,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+
 
 #if UNITY_EDITOR
-    using UnityEditor;
+using UnityEditor;
     using System.Net;
 #endif
 
 public class FirstPersonController : MonoBehaviour
 {
+    [Range(1,4)]
+    public int idPlayer;
     private Rigidbody rb;
 
     #region Camera Movement Variables
@@ -58,6 +62,7 @@ public class FirstPersonController : MonoBehaviour
     public bool playerCanMove = true;
     public float walkSpeed = 5f;
     public float maxVelocityChange = 10f;
+    public Vector3 movePlayer;
 
     // Internal Variables
     private bool isWalking = false;
@@ -72,6 +77,7 @@ public class FirstPersonController : MonoBehaviour
     public float sprintCooldown = .5f;
     public float sprintFOV = 80f;
     public float sprintFOVStepTime = 10f;
+    public bool tryToSprint = false;
 
     // Sprint Bar
     public bool useSprintBar = true;
@@ -207,16 +213,16 @@ public class FirstPersonController : MonoBehaviour
         // Control camera movement
         if(cameraCanMove)
         {
-            yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
+            yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X" + idPlayer) * mouseSensitivity;
 
             if (!invertCamera)
             {
-                pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
+                pitch -= mouseSensitivity * Input.GetAxis("Mouse Y" + idPlayer);
             }
             else
             {
                 // Inverted Y
-                pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
+                pitch += mouseSensitivity * Input.GetAxis("Mouse Y" + idPlayer);
             }
 
             // Clamp pitch between lookAngle
@@ -326,10 +332,10 @@ public class FirstPersonController : MonoBehaviour
         #region Jump
 
         // Gets input and calls jump method
-        if(enableJump && Input.GetKeyDown(jumpKey) && isGrounded)
-        {
-            Jump();
-        }
+        //if(enableJump && Input.GetButtonDown("Jump" + idPlayer) && isGrounded)
+        //{
+        //    Jump();
+        //}
 
         #endregion
 
@@ -337,17 +343,17 @@ public class FirstPersonController : MonoBehaviour
 
         if (enableCrouch)
         {
-            if(Input.GetKeyDown(crouchKey) && !holdToCrouch)
+            if(Input.GetButtonDown("Crouch" + idPlayer) && !holdToCrouch)
             {
                 Crouch();
             }
             
-            if(Input.GetKeyDown(crouchKey) && holdToCrouch)
+            if(Input.GetButtonDown("Crouch" + idPlayer) && holdToCrouch)
             {
                 isCrouched = false;
                 Crouch();
             }
-            else if(Input.GetKeyUp(crouchKey) && holdToCrouch)
+            else if(Input.GetButtonUp("Crouch" + idPlayer) && holdToCrouch)
             {
                 isCrouched = true;
                 Crouch();
@@ -371,7 +377,7 @@ public class FirstPersonController : MonoBehaviour
         if (playerCanMove)
         {
             // Calculate how fast we should be moving
-            Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            Vector3 targetVelocity = new Vector3(movePlayer.x, 0, movePlayer.y);
 
             // Checks if player is walking and isGrounded
             // Will allow head bob
@@ -385,7 +391,7 @@ public class FirstPersonController : MonoBehaviour
             }
 
             // All movement calculations shile sprint is active
-            if (enableSprint && Input.GetKey(sprintKey) && sprintRemaining > 0f && !isSprintCooldown)
+            if (enableSprint && tryToSprint && sprintRemaining > 0f && !isSprintCooldown)
             {
                 targetVelocity = transform.TransformDirection(targetVelocity) * sprintSpeed;
 
@@ -419,6 +425,7 @@ public class FirstPersonController : MonoBehaviour
             else
             {
                 isSprinting = false;
+                tryToSprint = false;
 
                 if (hideBarWhenFull && sprintRemaining == sprintDuration)
                 {
@@ -436,6 +443,7 @@ public class FirstPersonController : MonoBehaviour
 
                 rb.AddForce(velocityChange, ForceMode.VelocityChange);
             }
+            //movePlayer = new Vector3(0, 0, 0);
         }
 
         #endregion
@@ -526,8 +534,50 @@ public class FirstPersonController : MonoBehaviour
             joint.localPosition = new Vector3(Mathf.Lerp(joint.localPosition.x, jointOriginalPos.x, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.y, jointOriginalPos.y, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.z, jointOriginalPos.z, Time.deltaTime * bobSpeed));
         }
     }
-}
 
+    public void OnMove(InputValue value)
+    {
+
+        movePlayer = value.Get<Vector2>();
+    }
+
+    public void OnMoveLeftRight(InputValue value)
+    {
+
+        //movePlayer.x = -value.Get<float>();
+
+    }
+
+    public void OnMoveUpDown(InputValue value)
+    {
+        //movePlayer.z = value.Get<float>();
+        //print(movePlayer.z);
+
+    }
+
+    public void OnSprint()
+    {
+        tryToSprint = true;
+    }
+
+    public void OnCrouch()
+    {
+        Crouch();
+    }
+
+    public void OnJump()
+    {
+        if(isGrounded)
+        {
+            Jump();
+        }
+    }
+
+    public void OnInteract()
+    {
+
+    }
+}
 
 
 // Custom Editor
@@ -553,6 +603,8 @@ public class FirstPersonController : MonoBehaviour
         GUILayout.Label("By Jess Case", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 12 });
         GUILayout.Label("version 1.0.1", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 12 });
         EditorGUILayout.Space();
+
+        fpc.idPlayer = (int)EditorGUILayout.Slider(new GUIContent("ID", "The camera’s view angle. Changes the player camera directly."), fpc.idPlayer, 1, 4);
 
         #region Camera Setup
 
@@ -677,6 +729,7 @@ public class FirstPersonController : MonoBehaviour
         EditorGUILayout.Space();
 
         #endregion
+
 
         #region Jump
 

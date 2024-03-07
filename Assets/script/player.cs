@@ -11,6 +11,8 @@ public class player : MonoBehaviour
     public GameObject textDone;
     public Slider progressBar;
     public bool canInteract;
+    public bool tryToInteract;
+    public PlayerController playerController;
     //public bool isInteracting;
     public bool isChargingPhoto;
     public List<GameObject> listOtherPlayer;
@@ -40,6 +42,7 @@ public class player : MonoBehaviour
 
     void Update()
     {
+
         if (isAlive == false)
         {
             return;
@@ -47,22 +50,24 @@ public class player : MonoBehaviour
         if (canInteract && Input.GetKey(KeyCode.E))
         {
             if (currentInteraction.available == true)
-            {
-                progressBar.gameObject.SetActive(true);
-                //isInteracting = true;
-                progressBar.value += 0.01f;
-                if (progressBar.value == progressBar.maxValue)
-                {
-                    clearTask();
-                }
-            }
-            else
-            {
-                textDone.gameObject.SetActive(true);
-            }
 
+        if (canInteract && Input.GetKey(KeyCode.JoystickButton0))
+        {
+            progressBar.gameObject.SetActive(true);
+            //isInteracting = true;
+            progressBar.value += 0.025f;
+            if (progressBar.value == progressBar.maxValue)
+
+            {
+                clearTask();
+                canInteract=false;
+            }
         }
-        if (!Input.GetKey(KeyCode.E))
+        else
+        {
+            textDone.gameObject.SetActive(true);
+        }
+        if (!Input.GetKey(KeyCode.JoystickButton0))
         {
             progressBar.gameObject.SetActive(false);
             textDone.gameObject.SetActive(false);
@@ -89,8 +94,11 @@ public class player : MonoBehaviour
     {
         if (canInteract)
         {
-            UIInteract.SetActive(false);
-            canInteract = false;
+            if (other.gameObject.TryGetComponent<IInteract>(out IInteract interact))
+            {
+                UIInteract.SetActive(false);
+                canInteract = false;
+            }
         }
     }
     
@@ -99,6 +107,7 @@ public class player : MonoBehaviour
     {
         currentInteraction.available = false; 
         progressBar.gameObject.SetActive(false);
+        playerController.OnAddUltiProgression(progressBar.maxValue);
     }
 
     public void takePhoto()
