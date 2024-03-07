@@ -485,6 +485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TaskInt1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6895469946884114605, guid: da7f731d8336ed3428d2f93887b15d99, type: 3}
+      propertyPath: clearTime
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

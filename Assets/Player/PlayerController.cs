@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float sensitivity = 20f;
     public Camera cam;
     Vector2 moveCam;
-    public bool onPhotoMode = false;
+    public bool isOnPhotoMode = false;
     public GameObject photoDevice;
     public Animator photoAnim;
     public UltiBehaviour ulti;
@@ -84,8 +84,8 @@ public class PlayerController : MonoBehaviour
     public void OnPhotoMode()
     {
 
-        onPhotoMode = !onPhotoMode;
-        if(onPhotoMode)
+        isOnPhotoMode = !isOnPhotoMode;
+        if(isOnPhotoMode)
         {
             photoAnim.SetTrigger("Sortir");
             // Ajouter l'autorisation de prise de photo
@@ -147,5 +147,18 @@ public class PlayerController : MonoBehaviour
     public void FreezePlayer(bool _canMove)
     {
         firstPersonController.playerCanMove = !_canMove;
+    }
+
+    /*public void OnInteract()
+    {
+        playerInteraction.Interact();
+    }*/
+
+    public void OnTakePic()
+    {
+        if (isOnPhotoMode)
+        {
+            playerInteraction.takePhoto();
+        }
     }
 }

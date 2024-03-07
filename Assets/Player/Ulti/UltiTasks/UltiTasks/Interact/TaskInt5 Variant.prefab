@@ -480,6 +480,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4548798274361011667, guid: 4eb1ca9ad5abc044f9ea0dc71f6377b8, type: 3}
+      propertyPath: clearTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6516514734894991840, guid: 4eb1ca9ad5abc044f9ea0dc71f6377b8, type: 3}
       propertyPath: m_Name
       value: TaskInt5 Variant

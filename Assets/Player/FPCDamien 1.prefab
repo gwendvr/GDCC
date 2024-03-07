@@ -96,7 +96,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444937732173079862}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!65 &5824207672807722274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
   cooldownPhoto: 0
   isFlashing: 0
   flash: {fileID: 574610789629847045}
+  isInteracting: 0
 --- !u!1 &1091888199037048911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,11 +2218,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 100
   cam: {fileID: 1866093319889897059}
-  onPhotoMode: 0
+  isOnPhotoMode: 0
   photoDevice: {fileID: 8031804582802692722}
   photoAnim: {fileID: 7319113023474874762}
   ulti: {fileID: 4392501305285400414}
   ID: 0
+  playerInteraction: {fileID: 0}
+  firstPersonController: {fileID: 0}
 --- !u!136 &7297814571010010651
 CapsuleCollider:
   m_ObjectHideFlags: 0

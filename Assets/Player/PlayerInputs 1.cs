@@ -98,6 +98,15 @@ public partial class @PlayerInputs1: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""TakePic"",
+                    ""type"": ""Button"",
+                    ""id"": ""8ba831cc-977f-4aea-b7ef-8ff0c3f3fff0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -197,6 +206,28 @@ public partial class @PlayerInputs1: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Player1;Player2;Player3;Player4"",
                     ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4e58940c-22f0-4a41-8612-ba593e128784"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player4;Player3;Player2;Player1"",
+                    ""action"": ""TakePic"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""719ac542-90dc-46ce-aa7f-b3cc73b32794"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player1;Player2;Player3;Player4"",
+                    ""action"": ""TakePic"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -497,6 +528,7 @@ public partial class @PlayerInputs1: IInputActionCollection2, IDisposable
         m_MainActions1_Jump = m_MainActions1.FindAction("Jump", throwIfNotFound: true);
         m_MainActions1_Interact = m_MainActions1.FindAction("Interact", throwIfNotFound: true);
         m_MainActions1_Move = m_MainActions1.FindAction("Move", throwIfNotFound: true);
+        m_MainActions1_TakePic = m_MainActions1.FindAction("TakePic", throwIfNotFound: true);
         // MainActions2
         m_MainActions2 = asset.FindActionMap("MainActions2", throwIfNotFound: true);
         m_MainActions2_PhotoMode = m_MainActions2.FindAction("PhotoMode", throwIfNotFound: true);
@@ -581,6 +613,7 @@ public partial class @PlayerInputs1: IInputActionCollection2, IDisposable
     private readonly InputAction m_MainActions1_Jump;
     private readonly InputAction m_MainActions1_Interact;
     private readonly InputAction m_MainActions1_Move;
+    private readonly InputAction m_MainActions1_TakePic;
     public struct MainActions1Actions
     {
         private @PlayerInputs1 m_Wrapper;
@@ -593,6 +626,7 @@ public partial class @PlayerInputs1: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_MainActions1_Jump;
         public InputAction @Interact => m_Wrapper.m_MainActions1_Interact;
         public InputAction @Move => m_Wrapper.m_MainActions1_Move;
+        public InputAction @TakePic => m_Wrapper.m_MainActions1_TakePic;
         public InputActionMap Get() { return m_Wrapper.m_MainActions1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -626,6 +660,9 @@ public partial class @PlayerInputs1: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @TakePic.started += instance.OnTakePic;
+            @TakePic.performed += instance.OnTakePic;
+            @TakePic.canceled += instance.OnTakePic;
         }
 
         private void UnregisterCallbacks(IMainActions1Actions instance)
@@ -654,6 +691,9 @@ public partial class @PlayerInputs1: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @TakePic.started -= instance.OnTakePic;
+            @TakePic.performed -= instance.OnTakePic;
+            @TakePic.canceled -= instance.OnTakePic;
         }
 
         public void RemoveCallbacks(IMainActions1Actions instance)
@@ -903,6 +943,7 @@ public partial class @PlayerInputs1: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+        void OnTakePic(InputAction.CallbackContext context);
     }
     public interface IMainActions2Actions
     {

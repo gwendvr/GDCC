@@ -443,7 +443,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 959270412421297469, guid: 570c16ba160bef44bb39b68caed82389, type: 3}
       propertyPath: clearTime
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2935263920701388503, guid: 570c16ba160bef44bb39b68caed82389, type: 3}
       propertyPath: m_LocalPosition.x

@@ -791,7 +791,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Revert Cam
+  m_Text: Freeze
 --- !u!1 &7256027252360310584
 GameObject:
   m_ObjectHideFlags: 0
