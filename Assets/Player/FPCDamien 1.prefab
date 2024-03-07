@@ -95,7 +95,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444937732173079862}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!65 &5824207672807722274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -129,13 +129,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22cc935c6c8f32b49bcc8e10fe203668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   score: 0
   UIInteract: {fileID: 5990055592685544783}
   textDone: {fileID: 6488624425022352957}
   progressBar: {fileID: 628541645287443886}
   canInteract: 0
-  tryToInteract: 0
-  playerController: {fileID: 7500015824024230004}
+  isChargingPhoto: 0
+  listOtherPlayer: []
+  myMeshRenderer:
+  - {fileID: 3264349101031037750}
+  - {fileID: 4927034563713685928}
+  myCamera: {fileID: 1866093319889897059}
+  cameraReach: 5
+  isAlive: 0
+  cooldownPhoto: 0
+  isFlashing: 0
+  flash: {fileID: 0}
 --- !u!1 &1091888199037048911
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,6 +783,100 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.018805489, y: 0.34229162, z: -0.007191412}
     m_Extent: {x: 0.1852342, y: 0.36658105, z: 0.18003118}
   m_DirtyAABB: 0
+--- !u!1 &4083342555572353023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3728657873841322635}
+  - component: {fileID: 6093649718560662656}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3728657873841322635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4083342555572353023}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.021283114, y: -0.0020257803, z: 0.046775665, w: 0.99867666}
+  m_LocalPosition: {x: -0.036, y: -0.099999905, z: 0.376}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7525249337376603738}
+  m_LocalEulerAnglesHint: {x: 182.426, y: -180.346, z: -174.629}
+--- !u!108 &6093649718560662656
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4083342555572353023}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0
+  m_Range: 20
+  m_SpotAngle: 120
+  m_InnerSpotAngle: 1
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &4509444930344352217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,6 +1763,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 131753677257890443}
+  - {fileID: 3728657873841322635}
   m_Father: {fileID: 8360766203476187137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7218921133422339284
@@ -2060,8 +2165,6 @@ MonoBehaviour:
   photoAnim: {fileID: 7319113023474874762}
   ulti: {fileID: 4392501305285400414}
   ID: 0
-  playerInteraction: {fileID: 830338521943859428}
-  firstPersonController: {fileID: 6066128859176606950}
 --- !u!136 &7297814571010010651
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2143,6 +2246,7 @@ MonoBehaviour:
   playerCanMove: 1
   walkSpeed: 5
   maxVelocityChange: 10
+  movePlayer: {x: 0, y: 0, z: 0}
   enableSprint: 1
   unlimitedSprint: 0
   sprintKey: 340
@@ -2151,6 +2255,7 @@ MonoBehaviour:
   sprintCooldown: 0.5
   sprintFOV: 90
   sprintFOVStepTime: 4
+  tryToSprint: 0
   useSprintBar: 0
   hideBarWhenFull: 1
   sprintBarBG: {fileID: 4805372352167813817}

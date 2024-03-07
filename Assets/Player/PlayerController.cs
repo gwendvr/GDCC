@@ -29,19 +29,22 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Rotate(0, moveCam.y  * sensitivity * Time.deltaTime, 0);
-        Mathf.Clamp(moveCam.x, -80, 80);
-        if (moveCam.x < 0 && cam.transform.rotation.x < 80)
-        {
-            cam.transform.Rotate(moveCam.x * sensitivity * Time.deltaTime, 0, 0);
-        }
-        else if (moveCam.x > 0 && cam.transform.rotation.x > -80)
-        {
-            cam.transform.Rotate(moveCam.x * sensitivity * Time.deltaTime, 0, 0);
-        }
-        moveCam = new Vector2(0, 0);
+        transform.Rotate(0, moveCam.x  * sensitivity * Time.deltaTime, 0);
+
+        float pitch = -moveCam.y * sensitivity * Time.deltaTime;
+        float pitchValue = (cam.transform.rotation.eulerAngles.x + 180.0f) % 360.0f - 180.0f;
+        float yRotation = Mathf.Clamp(pitchValue + pitch, -40.0f, 40.0f) - cam.transform.rotation.eulerAngles.x;
+        cam.transform.Rotate(yRotation, 0, 0);
+        //moveCam = new Vector2(0, 0);
     }
 
+
+    public void OnMoveCam(InputValue value)
+    {
+        Debug.Log(value);
+
+        moveCam = value.Get<Vector2>();
+    }
 
     public void OnMoveCamUpDown(InputValue value)
     {

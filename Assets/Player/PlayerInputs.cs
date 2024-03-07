@@ -24,27 +24,188 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputs"",
     ""maps"": [
         {
-            ""name"": ""MainActions"",
-            ""id"": ""dcaca6d6-6649-40f3-a354-eb74f4747073"",
+            ""name"": ""MainActions1"",
+            ""id"": ""a3d263f2-3795-42c2-87d9-60170b92cf46"",
             ""actions"": [
                 {
-                    ""name"": ""MoveCamUpDown"",
+                    ""name"": ""PhotoMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""32561b6c-27b8-4119-aa33-28e2b8917c3e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ulti"",
+                    ""type"": ""Button"",
+                    ""id"": ""820c9128-7d03-404d-b162-5b04542aa3f2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveCam"",
                     ""type"": ""Value"",
-                    ""id"": ""4d83e3c8-a0a9-4892-bdce-c81fc5723202"",
-                    ""expectedControlType"": ""Axis"",
+                    ""id"": ""4a13158c-b754-45e0-b21b-b3b919230fea"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""MoveCamLeftRight"",
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""83b124e1-f8a3-4c29-944e-afd37292ddf0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8231d62-302e-44d2-ae54-84b356b7d024"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""eee61495-8a09-4dcd-95cc-a584c28926f8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""396e46ba-0bf2-4b22-bc1a-9a378cce0ed9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move"",
                     ""type"": ""Value"",
-                    ""id"": ""732706ca-a668-4ee4-92be-4e760433e400"",
-                    ""expectedControlType"": ""Axis"",
+                    ""id"": ""5519dce3-71ac-427d-b48d-dfc5e88aa7ab"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""82b3d03c-0f0f-4a26-a3cf-82c8c0f185f6"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player1"",
+                    ""action"": ""PhotoMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 },
+                {
+                    ""name"": """",
+                    ""id"": ""a412710f-33c9-4aa1-aa28-da04d88252f3"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player2;Player1;Player3;Player4"",
+                    ""action"": ""PhotoMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38f4ac03-da56-449d-beba-c1926e744bd6"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player2;Player1;Player3;Player4"",
+                    ""action"": ""Ulti"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""31ee73bf-0b48-4f85-80be-c16cf9d07f0d"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player1;Player2;Player3;Player4"",
+                    ""action"": ""MoveCam"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""45a77637-df49-4580-8fa5-228e4b17ca0c"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player1;Player2;Player3;Player4"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bbd4c1b1-e067-461e-8168-2ab578288943"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player4;Player2;Player1;Player3"",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""23be6c1e-c66a-4078-93e0-c684c4e7002a"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player4;Player3;Player2;Player1"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e367690c-3afc-4032-bf96-59a0e57905e8"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player1;Player2;Player3;Player4"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""204a6494-c887-4ea7-bbce-d2459f722461"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Player1;Player2;Player3;Player4"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""MainActions2"",
+            ""id"": ""dcaca6d6-6649-40f3-a354-eb74f4747073"",
+            ""actions"": [
                 {
                     ""name"": ""PhotoMode"",
                     ""type"": ""Button"",
@@ -64,86 +225,31 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""AddUltiProgression"",
-                    ""type"": ""Button"",
-                    ""id"": ""02e54a86-36f5-47c9-b416-5c8592fa426f"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""MoveCam"",
+                    ""type"": ""Value"",
+                    ""id"": ""7942d8f4-4a9d-4dbd-8e4b-6cc11847c605"",
+                    ""expectedControlType"": ""Stick"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""85b45d66-47e4-4a88-a120-7e3ef8b6faf9"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""71d3d88e-b3ee-4f6f-b413-2bf9fd67d09e"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MoveCamUpDown"",
-                    ""isComposite"": true,
+                    ""action"": ""PhotoMode"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""411f7650-3661-4615-b25c-833c117beac1"",
-                    ""path"": ""<Mouse>/delta/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveCamUpDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""839db2d5-29e2-4102-ad1d-58a44ce8e4ff"",
-                    ""path"": ""<Mouse>/delta/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveCamUpDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""1a4ff79a-6074-48e5-9ffc-a1d587f77612"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveCamLeftRight"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""c3593446-16b5-4189-9abd-4fd161b0f4b4"",
-                    ""path"": ""<Mouse>/delta/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveCamLeftRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""cbb477b6-ab90-4927-910b-723cc48ff903"",
-                    ""path"": ""<Mouse>/delta/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveCamLeftRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""71d3d88e-b3ee-4f6f-b413-2bf9fd67d09e"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""id"": ""6d978c1f-60d9-48bf-bae8-25e7d0d5d9d6"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -154,7 +260,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""dbd06a44-5ee5-4e0b-8ede-cd90109be8bd"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -164,27 +270,248 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f764d7aa-bac2-4667-bf12-f27fd40f3e3e"",
-                    ""path"": ""<Keyboard>/u"",
+                    ""id"": ""26e53b94-e3a6-4e5c-a057-5b86a39c7bd9"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AddUltiProgression"",
+                    ""action"": ""MoveCam"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""MainActions3"",
+            ""id"": ""1231ec4a-14cf-4440-94d6-c572598f0527"",
+            ""actions"": [
+                {
+                    ""name"": ""PhotoMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""b77af0d4-4021-4db1-9c0d-f6cb639da709"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ulti"",
+                    ""type"": ""Button"",
+                    ""id"": ""ee2930fa-dbb5-4818-a24d-788768441a93"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveCam"",
+                    ""type"": ""Value"",
+                    ""id"": ""7ee44321-6b63-4f06-aa97-b8cbe3d2fab9"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""109f61c5-9941-4684-9cc9-4e22d178ece5"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PhotoMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""438c4713-6e18-4649-9009-214165e371b9"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PhotoMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""571f66c9-3724-4fa6-acba-9cb93c4ff232"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ulti"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c31566a3-b5e7-403e-b75f-08cc568e634f"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveCam"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""MainActions4"",
+            ""id"": ""ede1f408-1770-406e-8617-d290ed6b0d0d"",
+            ""actions"": [
+                {
+                    ""name"": ""PhotoMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a6b05bb-6ad0-4ca2-8c20-e3da3c7a7934"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ulti"",
+                    ""type"": ""Button"",
+                    ""id"": ""bce8934b-ee36-47a9-aa93-8ab9aac020b0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveCam"",
+                    ""type"": ""Value"",
+                    ""id"": ""f92eccc2-0c6a-42a2-a77a-0d9b4cce2ed0"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2e03ba48-0c9b-4ce1-acb1-f44a1d1afdfb"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PhotoMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""055f62cd-8002-431b-b9bc-150b8f0d74c9"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PhotoMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8fd3c4d0-e62c-4cf3-be00-6234c929d99e"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ulti"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""36c9f055-437a-4a28-94cf-bc75dfa37de2"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveCam"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Player1"",
+            ""bindingGroup"": ""Player1"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Player2"",
+            ""bindingGroup"": ""Player2"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Player3"",
+            ""bindingGroup"": ""Player3"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Player4"",
+            ""bindingGroup"": ""Player4"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
-        // MainActions
-        m_MainActions = asset.FindActionMap("MainActions", throwIfNotFound: true);
-        m_MainActions_MoveCamUpDown = m_MainActions.FindAction("MoveCamUpDown", throwIfNotFound: true);
-        m_MainActions_MoveCamLeftRight = m_MainActions.FindAction("MoveCamLeftRight", throwIfNotFound: true);
-        m_MainActions_PhotoMode = m_MainActions.FindAction("PhotoMode", throwIfNotFound: true);
-        m_MainActions_Ulti = m_MainActions.FindAction("Ulti", throwIfNotFound: true);
-        m_MainActions_AddUltiProgression = m_MainActions.FindAction("AddUltiProgression", throwIfNotFound: true);
+        // MainActions1
+        m_MainActions1 = asset.FindActionMap("MainActions1", throwIfNotFound: true);
+        m_MainActions1_PhotoMode = m_MainActions1.FindAction("PhotoMode", throwIfNotFound: true);
+        m_MainActions1_Ulti = m_MainActions1.FindAction("Ulti", throwIfNotFound: true);
+        m_MainActions1_MoveCam = m_MainActions1.FindAction("MoveCam", throwIfNotFound: true);
+        m_MainActions1_Sprint = m_MainActions1.FindAction("Sprint", throwIfNotFound: true);
+        m_MainActions1_Crouch = m_MainActions1.FindAction("Crouch", throwIfNotFound: true);
+        m_MainActions1_Jump = m_MainActions1.FindAction("Jump", throwIfNotFound: true);
+        m_MainActions1_Interact = m_MainActions1.FindAction("Interact", throwIfNotFound: true);
+        m_MainActions1_Move = m_MainActions1.FindAction("Move", throwIfNotFound: true);
+        // MainActions2
+        m_MainActions2 = asset.FindActionMap("MainActions2", throwIfNotFound: true);
+        m_MainActions2_PhotoMode = m_MainActions2.FindAction("PhotoMode", throwIfNotFound: true);
+        m_MainActions2_Ulti = m_MainActions2.FindAction("Ulti", throwIfNotFound: true);
+        m_MainActions2_MoveCam = m_MainActions2.FindAction("MoveCam", throwIfNotFound: true);
+        // MainActions3
+        m_MainActions3 = asset.FindActionMap("MainActions3", throwIfNotFound: true);
+        m_MainActions3_PhotoMode = m_MainActions3.FindAction("PhotoMode", throwIfNotFound: true);
+        m_MainActions3_Ulti = m_MainActions3.FindAction("Ulti", throwIfNotFound: true);
+        m_MainActions3_MoveCam = m_MainActions3.FindAction("MoveCam", throwIfNotFound: true);
+        // MainActions4
+        m_MainActions4 = asset.FindActionMap("MainActions4", throwIfNotFound: true);
+        m_MainActions4_PhotoMode = m_MainActions4.FindAction("PhotoMode", throwIfNotFound: true);
+        m_MainActions4_Ulti = m_MainActions4.FindAction("Ulti", throwIfNotFound: true);
+        m_MainActions4_MoveCam = m_MainActions4.FindAction("MoveCam", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -243,89 +570,356 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // MainActions
-    private readonly InputActionMap m_MainActions;
-    private List<IMainActionsActions> m_MainActionsActionsCallbackInterfaces = new List<IMainActionsActions>();
-    private readonly InputAction m_MainActions_MoveCamUpDown;
-    private readonly InputAction m_MainActions_MoveCamLeftRight;
-    private readonly InputAction m_MainActions_PhotoMode;
-    private readonly InputAction m_MainActions_Ulti;
-    private readonly InputAction m_MainActions_AddUltiProgression;
-    public struct MainActionsActions
+    // MainActions1
+    private readonly InputActionMap m_MainActions1;
+    private List<IMainActions1Actions> m_MainActions1ActionsCallbackInterfaces = new List<IMainActions1Actions>();
+    private readonly InputAction m_MainActions1_PhotoMode;
+    private readonly InputAction m_MainActions1_Ulti;
+    private readonly InputAction m_MainActions1_MoveCam;
+    private readonly InputAction m_MainActions1_Sprint;
+    private readonly InputAction m_MainActions1_Crouch;
+    private readonly InputAction m_MainActions1_Jump;
+    private readonly InputAction m_MainActions1_Interact;
+    private readonly InputAction m_MainActions1_Move;
+    public struct MainActions1Actions
     {
         private @PlayerInputs m_Wrapper;
-        public MainActionsActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MoveCamUpDown => m_Wrapper.m_MainActions_MoveCamUpDown;
-        public InputAction @MoveCamLeftRight => m_Wrapper.m_MainActions_MoveCamLeftRight;
-        public InputAction @PhotoMode => m_Wrapper.m_MainActions_PhotoMode;
-        public InputAction @Ulti => m_Wrapper.m_MainActions_Ulti;
-        public InputAction @AddUltiProgression => m_Wrapper.m_MainActions_AddUltiProgression;
-        public InputActionMap Get() { return m_Wrapper.m_MainActions; }
+        public MainActions1Actions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PhotoMode => m_Wrapper.m_MainActions1_PhotoMode;
+        public InputAction @Ulti => m_Wrapper.m_MainActions1_Ulti;
+        public InputAction @MoveCam => m_Wrapper.m_MainActions1_MoveCam;
+        public InputAction @Sprint => m_Wrapper.m_MainActions1_Sprint;
+        public InputAction @Crouch => m_Wrapper.m_MainActions1_Crouch;
+        public InputAction @Jump => m_Wrapper.m_MainActions1_Jump;
+        public InputAction @Interact => m_Wrapper.m_MainActions1_Interact;
+        public InputAction @Move => m_Wrapper.m_MainActions1_Move;
+        public InputActionMap Get() { return m_Wrapper.m_MainActions1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(MainActionsActions set) { return set.Get(); }
-        public void AddCallbacks(IMainActionsActions instance)
+        public static implicit operator InputActionMap(MainActions1Actions set) { return set.Get(); }
+        public void AddCallbacks(IMainActions1Actions instance)
         {
-            if (instance == null || m_Wrapper.m_MainActionsActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_MainActionsActionsCallbackInterfaces.Add(instance);
-            @MoveCamUpDown.started += instance.OnMoveCamUpDown;
-            @MoveCamUpDown.performed += instance.OnMoveCamUpDown;
-            @MoveCamUpDown.canceled += instance.OnMoveCamUpDown;
-            @MoveCamLeftRight.started += instance.OnMoveCamLeftRight;
-            @MoveCamLeftRight.performed += instance.OnMoveCamLeftRight;
-            @MoveCamLeftRight.canceled += instance.OnMoveCamLeftRight;
+            if (instance == null || m_Wrapper.m_MainActions1ActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MainActions1ActionsCallbackInterfaces.Add(instance);
             @PhotoMode.started += instance.OnPhotoMode;
             @PhotoMode.performed += instance.OnPhotoMode;
             @PhotoMode.canceled += instance.OnPhotoMode;
             @Ulti.started += instance.OnUlti;
             @Ulti.performed += instance.OnUlti;
             @Ulti.canceled += instance.OnUlti;
-            @AddUltiProgression.started += instance.OnAddUltiProgression;
-            @AddUltiProgression.performed += instance.OnAddUltiProgression;
-            @AddUltiProgression.canceled += instance.OnAddUltiProgression;
+            @MoveCam.started += instance.OnMoveCam;
+            @MoveCam.performed += instance.OnMoveCam;
+            @MoveCam.canceled += instance.OnMoveCam;
+            @Sprint.started += instance.OnSprint;
+            @Sprint.performed += instance.OnSprint;
+            @Sprint.canceled += instance.OnSprint;
+            @Crouch.started += instance.OnCrouch;
+            @Crouch.performed += instance.OnCrouch;
+            @Crouch.canceled += instance.OnCrouch;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
         }
 
-        private void UnregisterCallbacks(IMainActionsActions instance)
+        private void UnregisterCallbacks(IMainActions1Actions instance)
         {
-            @MoveCamUpDown.started -= instance.OnMoveCamUpDown;
-            @MoveCamUpDown.performed -= instance.OnMoveCamUpDown;
-            @MoveCamUpDown.canceled -= instance.OnMoveCamUpDown;
-            @MoveCamLeftRight.started -= instance.OnMoveCamLeftRight;
-            @MoveCamLeftRight.performed -= instance.OnMoveCamLeftRight;
-            @MoveCamLeftRight.canceled -= instance.OnMoveCamLeftRight;
             @PhotoMode.started -= instance.OnPhotoMode;
             @PhotoMode.performed -= instance.OnPhotoMode;
             @PhotoMode.canceled -= instance.OnPhotoMode;
             @Ulti.started -= instance.OnUlti;
             @Ulti.performed -= instance.OnUlti;
             @Ulti.canceled -= instance.OnUlti;
-            @AddUltiProgression.started -= instance.OnAddUltiProgression;
-            @AddUltiProgression.performed -= instance.OnAddUltiProgression;
-            @AddUltiProgression.canceled -= instance.OnAddUltiProgression;
+            @MoveCam.started -= instance.OnMoveCam;
+            @MoveCam.performed -= instance.OnMoveCam;
+            @MoveCam.canceled -= instance.OnMoveCam;
+            @Sprint.started -= instance.OnSprint;
+            @Sprint.performed -= instance.OnSprint;
+            @Sprint.canceled -= instance.OnSprint;
+            @Crouch.started -= instance.OnCrouch;
+            @Crouch.performed -= instance.OnCrouch;
+            @Crouch.canceled -= instance.OnCrouch;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
         }
 
-        public void RemoveCallbacks(IMainActionsActions instance)
+        public void RemoveCallbacks(IMainActions1Actions instance)
         {
-            if (m_Wrapper.m_MainActionsActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_MainActions1ActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IMainActionsActions instance)
+        public void SetCallbacks(IMainActions1Actions instance)
         {
-            foreach (var item in m_Wrapper.m_MainActionsActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_MainActions1ActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_MainActionsActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_MainActions1ActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public MainActionsActions @MainActions => new MainActionsActions(this);
-    public interface IMainActionsActions
+    public MainActions1Actions @MainActions1 => new MainActions1Actions(this);
+
+    // MainActions2
+    private readonly InputActionMap m_MainActions2;
+    private List<IMainActions2Actions> m_MainActions2ActionsCallbackInterfaces = new List<IMainActions2Actions>();
+    private readonly InputAction m_MainActions2_PhotoMode;
+    private readonly InputAction m_MainActions2_Ulti;
+    private readonly InputAction m_MainActions2_MoveCam;
+    public struct MainActions2Actions
     {
-        void OnMoveCamUpDown(InputAction.CallbackContext context);
-        void OnMoveCamLeftRight(InputAction.CallbackContext context);
+        private @PlayerInputs m_Wrapper;
+        public MainActions2Actions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PhotoMode => m_Wrapper.m_MainActions2_PhotoMode;
+        public InputAction @Ulti => m_Wrapper.m_MainActions2_Ulti;
+        public InputAction @MoveCam => m_Wrapper.m_MainActions2_MoveCam;
+        public InputActionMap Get() { return m_Wrapper.m_MainActions2; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MainActions2Actions set) { return set.Get(); }
+        public void AddCallbacks(IMainActions2Actions instance)
+        {
+            if (instance == null || m_Wrapper.m_MainActions2ActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MainActions2ActionsCallbackInterfaces.Add(instance);
+            @PhotoMode.started += instance.OnPhotoMode;
+            @PhotoMode.performed += instance.OnPhotoMode;
+            @PhotoMode.canceled += instance.OnPhotoMode;
+            @Ulti.started += instance.OnUlti;
+            @Ulti.performed += instance.OnUlti;
+            @Ulti.canceled += instance.OnUlti;
+            @MoveCam.started += instance.OnMoveCam;
+            @MoveCam.performed += instance.OnMoveCam;
+            @MoveCam.canceled += instance.OnMoveCam;
+        }
+
+        private void UnregisterCallbacks(IMainActions2Actions instance)
+        {
+            @PhotoMode.started -= instance.OnPhotoMode;
+            @PhotoMode.performed -= instance.OnPhotoMode;
+            @PhotoMode.canceled -= instance.OnPhotoMode;
+            @Ulti.started -= instance.OnUlti;
+            @Ulti.performed -= instance.OnUlti;
+            @Ulti.canceled -= instance.OnUlti;
+            @MoveCam.started -= instance.OnMoveCam;
+            @MoveCam.performed -= instance.OnMoveCam;
+            @MoveCam.canceled -= instance.OnMoveCam;
+        }
+
+        public void RemoveCallbacks(IMainActions2Actions instance)
+        {
+            if (m_Wrapper.m_MainActions2ActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IMainActions2Actions instance)
+        {
+            foreach (var item in m_Wrapper.m_MainActions2ActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MainActions2ActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public MainActions2Actions @MainActions2 => new MainActions2Actions(this);
+
+    // MainActions3
+    private readonly InputActionMap m_MainActions3;
+    private List<IMainActions3Actions> m_MainActions3ActionsCallbackInterfaces = new List<IMainActions3Actions>();
+    private readonly InputAction m_MainActions3_PhotoMode;
+    private readonly InputAction m_MainActions3_Ulti;
+    private readonly InputAction m_MainActions3_MoveCam;
+    public struct MainActions3Actions
+    {
+        private @PlayerInputs m_Wrapper;
+        public MainActions3Actions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PhotoMode => m_Wrapper.m_MainActions3_PhotoMode;
+        public InputAction @Ulti => m_Wrapper.m_MainActions3_Ulti;
+        public InputAction @MoveCam => m_Wrapper.m_MainActions3_MoveCam;
+        public InputActionMap Get() { return m_Wrapper.m_MainActions3; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MainActions3Actions set) { return set.Get(); }
+        public void AddCallbacks(IMainActions3Actions instance)
+        {
+            if (instance == null || m_Wrapper.m_MainActions3ActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MainActions3ActionsCallbackInterfaces.Add(instance);
+            @PhotoMode.started += instance.OnPhotoMode;
+            @PhotoMode.performed += instance.OnPhotoMode;
+            @PhotoMode.canceled += instance.OnPhotoMode;
+            @Ulti.started += instance.OnUlti;
+            @Ulti.performed += instance.OnUlti;
+            @Ulti.canceled += instance.OnUlti;
+            @MoveCam.started += instance.OnMoveCam;
+            @MoveCam.performed += instance.OnMoveCam;
+            @MoveCam.canceled += instance.OnMoveCam;
+        }
+
+        private void UnregisterCallbacks(IMainActions3Actions instance)
+        {
+            @PhotoMode.started -= instance.OnPhotoMode;
+            @PhotoMode.performed -= instance.OnPhotoMode;
+            @PhotoMode.canceled -= instance.OnPhotoMode;
+            @Ulti.started -= instance.OnUlti;
+            @Ulti.performed -= instance.OnUlti;
+            @Ulti.canceled -= instance.OnUlti;
+            @MoveCam.started -= instance.OnMoveCam;
+            @MoveCam.performed -= instance.OnMoveCam;
+            @MoveCam.canceled -= instance.OnMoveCam;
+        }
+
+        public void RemoveCallbacks(IMainActions3Actions instance)
+        {
+            if (m_Wrapper.m_MainActions3ActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IMainActions3Actions instance)
+        {
+            foreach (var item in m_Wrapper.m_MainActions3ActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MainActions3ActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public MainActions3Actions @MainActions3 => new MainActions3Actions(this);
+
+    // MainActions4
+    private readonly InputActionMap m_MainActions4;
+    private List<IMainActions4Actions> m_MainActions4ActionsCallbackInterfaces = new List<IMainActions4Actions>();
+    private readonly InputAction m_MainActions4_PhotoMode;
+    private readonly InputAction m_MainActions4_Ulti;
+    private readonly InputAction m_MainActions4_MoveCam;
+    public struct MainActions4Actions
+    {
+        private @PlayerInputs m_Wrapper;
+        public MainActions4Actions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PhotoMode => m_Wrapper.m_MainActions4_PhotoMode;
+        public InputAction @Ulti => m_Wrapper.m_MainActions4_Ulti;
+        public InputAction @MoveCam => m_Wrapper.m_MainActions4_MoveCam;
+        public InputActionMap Get() { return m_Wrapper.m_MainActions4; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MainActions4Actions set) { return set.Get(); }
+        public void AddCallbacks(IMainActions4Actions instance)
+        {
+            if (instance == null || m_Wrapper.m_MainActions4ActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MainActions4ActionsCallbackInterfaces.Add(instance);
+            @PhotoMode.started += instance.OnPhotoMode;
+            @PhotoMode.performed += instance.OnPhotoMode;
+            @PhotoMode.canceled += instance.OnPhotoMode;
+            @Ulti.started += instance.OnUlti;
+            @Ulti.performed += instance.OnUlti;
+            @Ulti.canceled += instance.OnUlti;
+            @MoveCam.started += instance.OnMoveCam;
+            @MoveCam.performed += instance.OnMoveCam;
+            @MoveCam.canceled += instance.OnMoveCam;
+        }
+
+        private void UnregisterCallbacks(IMainActions4Actions instance)
+        {
+            @PhotoMode.started -= instance.OnPhotoMode;
+            @PhotoMode.performed -= instance.OnPhotoMode;
+            @PhotoMode.canceled -= instance.OnPhotoMode;
+            @Ulti.started -= instance.OnUlti;
+            @Ulti.performed -= instance.OnUlti;
+            @Ulti.canceled -= instance.OnUlti;
+            @MoveCam.started -= instance.OnMoveCam;
+            @MoveCam.performed -= instance.OnMoveCam;
+            @MoveCam.canceled -= instance.OnMoveCam;
+        }
+
+        public void RemoveCallbacks(IMainActions4Actions instance)
+        {
+            if (m_Wrapper.m_MainActions4ActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IMainActions4Actions instance)
+        {
+            foreach (var item in m_Wrapper.m_MainActions4ActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MainActions4ActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public MainActions4Actions @MainActions4 => new MainActions4Actions(this);
+    private int m_Player1SchemeIndex = -1;
+    public InputControlScheme Player1Scheme
+    {
+        get
+        {
+            if (m_Player1SchemeIndex == -1) m_Player1SchemeIndex = asset.FindControlSchemeIndex("Player1");
+            return asset.controlSchemes[m_Player1SchemeIndex];
+        }
+    }
+    private int m_Player2SchemeIndex = -1;
+    public InputControlScheme Player2Scheme
+    {
+        get
+        {
+            if (m_Player2SchemeIndex == -1) m_Player2SchemeIndex = asset.FindControlSchemeIndex("Player2");
+            return asset.controlSchemes[m_Player2SchemeIndex];
+        }
+    }
+    private int m_Player3SchemeIndex = -1;
+    public InputControlScheme Player3Scheme
+    {
+        get
+        {
+            if (m_Player3SchemeIndex == -1) m_Player3SchemeIndex = asset.FindControlSchemeIndex("Player3");
+            return asset.controlSchemes[m_Player3SchemeIndex];
+        }
+    }
+    private int m_Player4SchemeIndex = -1;
+    public InputControlScheme Player4Scheme
+    {
+        get
+        {
+            if (m_Player4SchemeIndex == -1) m_Player4SchemeIndex = asset.FindControlSchemeIndex("Player4");
+            return asset.controlSchemes[m_Player4SchemeIndex];
+        }
+    }
+    public interface IMainActions1Actions
+    {
         void OnPhotoMode(InputAction.CallbackContext context);
         void OnUlti(InputAction.CallbackContext context);
-        void OnAddUltiProgression(InputAction.CallbackContext context);
+        void OnMoveCam(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
+    }
+    public interface IMainActions2Actions
+    {
+        void OnPhotoMode(InputAction.CallbackContext context);
+        void OnUlti(InputAction.CallbackContext context);
+        void OnMoveCam(InputAction.CallbackContext context);
+    }
+    public interface IMainActions3Actions
+    {
+        void OnPhotoMode(InputAction.CallbackContext context);
+        void OnUlti(InputAction.CallbackContext context);
+        void OnMoveCam(InputAction.CallbackContext context);
+    }
+    public interface IMainActions4Actions
+    {
+        void OnPhotoMode(InputAction.CallbackContext context);
+        void OnUlti(InputAction.CallbackContext context);
+        void OnMoveCam(InputAction.CallbackContext context);
     }
 }
