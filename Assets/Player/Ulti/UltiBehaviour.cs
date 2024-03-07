@@ -20,11 +20,7 @@ public class UltiBehaviour : MonoBehaviour
     }
     public void AddUltiProgression(float _progressionToAdded)
     {
-        if (ultiProgression < 100)
-        {
-            ultiProgression += _progressionToAdded;
-        }
-        else ultiProgression = 100;
+        ultiProgression += _progressionToAdded;
         print(ultiProgression);
     }
 

@@ -39,9 +39,8 @@ public class PlayerSpawner : MonoBehaviour
         {
             if(i!=_exeption)
             {
-                player[i].FreezePlayer(true);
-                print("start freeze");
-                StartCoroutine(StopFreeze(i));
+                player[i].cam.transform.rotation = new Quaternion(0, player[i].cam.transform.rotation.y, 180, player[i].cam.transform.rotation.w);
+                StartCoroutine(ResetScreen(i));
             }
         }
 
@@ -65,13 +64,10 @@ public class PlayerSpawner : MonoBehaviour
         }
     }
 
-    IEnumerator StopFreeze(int _playerID)
+    IEnumerator ResetScreen(int _playerID)
     {
         yield return new WaitForSeconds(5f);
-        player[_playerID].FreezePlayer(false);
-        print("stop freeze");
-
-
+        player[_playerID].cam.transform.rotation = new Quaternion(0, player[_playerID].cam.transform.rotation.y, 0, 0);
     }
 
     IEnumerator HideFakeCams(int _fakeCamID)
