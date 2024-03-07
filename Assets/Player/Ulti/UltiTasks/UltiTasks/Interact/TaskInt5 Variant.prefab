@@ -488,6 +488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TaskInt5 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8413834608724281186, guid: 4eb1ca9ad5abc044f9ea0dc71f6377b8, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

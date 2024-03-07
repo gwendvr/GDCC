@@ -485,6 +485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TaskInt1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5355927138282480544, guid: da7f731d8336ed3428d2f93887b15d99, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 6895469946884114605, guid: da7f731d8336ed3428d2f93887b15d99, type: 3}
       propertyPath: clearTime
       value: 0.25
