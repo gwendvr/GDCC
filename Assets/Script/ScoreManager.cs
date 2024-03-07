@@ -100,6 +100,7 @@ public class ScoreManager : MonoBehaviour
         {
             if(player.activeInHierarchy && player.GetComponent<Score>().ScorePlayer >= 10)
             {
+                Debug.LogWarning("Jai gagne");
                 SceneManager.LoadScene("VictoryScene"); 
                 break; 
             }
