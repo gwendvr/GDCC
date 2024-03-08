@@ -901,6 +901,10 @@ PrefabInstance:
       propertyPath: playerGestion
       value: 
       objectReference: {fileID: 644533586}
+    - target: {fileID: 5873588895249429004, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6066128859176606950, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
       propertyPath: idPlayer
       value: 3
@@ -38790,6 +38794,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6109991334006291430, guid: 8e66169b6c08b684999668800003fef4, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7299836432126430578, guid: 8e66169b6c08b684999668800003fef4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 36.09958
@@ -44220,6 +44228,10 @@ PrefabInstance:
       propertyPath: playerGestion
       value: 
       objectReference: {fileID: 644533586}
+    - target: {fileID: 5873588895249429004, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6066128859176606950, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
       propertyPath: idPlayer
       value: 2
@@ -57717,6 +57729,10 @@ PrefabInstance:
       propertyPath: playerGestion
       value: 
       objectReference: {fileID: 644533586}
+    - target: {fileID: 5873588895249429004, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7500015824024230004, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
       propertyPath: playerInteraction
       value: 
@@ -60340,6 +60356,10 @@ PrefabInstance:
       propertyPath: playerGestion
       value: 
       objectReference: {fileID: 644533586}
+    - target: {fileID: 5873588895249429004, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6066128859176606950, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
       propertyPath: idPlayer
       value: 4

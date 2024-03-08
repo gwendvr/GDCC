@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.UIElements;
+using UnityEngine.UI;
+
 
 public class UltiBehaviour : MonoBehaviour
 {
@@ -8,11 +11,20 @@ public class UltiBehaviour : MonoBehaviour
     public GameObject smokeVFX;
     public PlayerSpawner playerGestion;
     public int playerID;
+    public Slider ultiProgressBar;
+    public Animator notEnoughtUlti;
+    public float passifProgressionSpeed;
 
     private int ultiID;
     private float ultiProgression;
-    
-    
+
+
+    public void FixedUpdate()
+    {
+        if (ultiProgression < 100) ultiProgression += Time.deltaTime * passifProgressionSpeed;
+        UpdateUltiProgressBar();
+    }
+
     public void SetUltiID(int _ID, int _playerID)
     {
         ultiID = _ID;
@@ -21,7 +33,12 @@ public class UltiBehaviour : MonoBehaviour
     public void AddUltiProgression(float _progressionToAdded)
     {
         ultiProgression += _progressionToAdded;
-        print(ultiProgression);
+        UpdateUltiProgressBar();
+    }
+
+    public void UpdateUltiProgressBar()
+    {
+        ultiProgressBar.value = ultiProgression;
     }
 
     public void UseUlti(Vector3 _position)
@@ -52,8 +69,13 @@ public class UltiBehaviour : MonoBehaviour
                     break;
             }
             ultiProgression = 0;
+            UpdateUltiProgressBar();
+
         }
-        else print("not enought progression");
+        else
+        {
+            notEnoughtUlti.SetTrigger("show");
+        }
 
     }
 }
