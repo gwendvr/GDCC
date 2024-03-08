@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public List<GameObject> players; // Liste des joueurs en jeu
+    public List<Light> LightPlayer;
+    public List<GameObject> Ref;
+    public List<GameObject> RespawnPoint;
     public int pointsForLastSurvivor = 3; // Points attribués au dernier survivant
     public LeaderboardManager lm;
     public GameObject canvaScore;
@@ -83,11 +86,14 @@ public class ScoreManager : MonoBehaviour
 
     public void TwoPlayer()
     {
+        LightPlayer.RemoveAt(3);
         players.RemoveAt(3);
+        LightPlayer.RemoveAt(2);
         players.RemoveAt(2);
     }
     public void ThreePlayer()
     {
+        LightPlayer.RemoveAt(3);
         players.RemoveAt(3);
     }
     
@@ -113,9 +119,19 @@ public class ScoreManager : MonoBehaviour
 
     public void RestartManche()
     {
+        RespawnPoint.Clear();
+        foreach (var element in Ref)
+        {
+            RespawnPoint.Add(element);
+        }
         foreach (var player in players)
         {
+            int rnd;
+            rnd = Random.Range(0, RespawnPoint.Count);
             player.gameObject.SetActive(true);
+            player.gameObject.transform.position = RespawnPoint[rnd].transform.position;
+            
+            RespawnPoint.Remove(RespawnPoint[rnd]);
         }
 
         pointsAdded = false;
