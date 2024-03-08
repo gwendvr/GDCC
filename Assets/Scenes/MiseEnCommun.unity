@@ -250,6 +250,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 665014023955156206, guid: 118baae2a79c44849b24d789b0c651ef, type: 3}
+      propertyPath: m_Text
+      value: Hide and flash
+      objectReference: {fileID: 0}
     - target: {fileID: 667248239370614566, guid: 118baae2a79c44849b24d789b0c651ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 6
@@ -778,6 +782,18 @@ PrefabInstance:
       propertyPath: playerSpawner
       value: 
       objectReference: {fileID: 644533586}
+    - target: {fileID: 8098393421834115322, guid: 118baae2a79c44849b24d789b0c651ef, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1443.6431
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098393421834115322, guid: 118baae2a79c44849b24d789b0c651ef, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 236.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 8098393421834115322, guid: 118baae2a79c44849b24d789b0c651ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8896478233797360464, guid: 118baae2a79c44849b24d789b0c651ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
