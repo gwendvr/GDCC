@@ -433,7 +433,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4680473691447993140, guid: 0784e6dd8d106084ca8d0a1ec26988cb, type: 3}
       propertyPath: clearTime
-      value: 1
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680473691447993140, guid: 0784e6dd8d106084ca8d0a1ec26988cb, type: 3}
+      propertyPath: taskPoint
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5294868062067194671, guid: 0784e6dd8d106084ca8d0a1ec26988cb, type: 3}
       propertyPath: m_Materials.Array.data[0]
