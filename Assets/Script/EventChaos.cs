@@ -24,7 +24,7 @@ public class EventChaos : MonoBehaviour
         if (!EventOnGoing)
         {
             
-            EventId = Random.Range(0, 8);
+            EventId = Random.Range(0, 7);
             
             switch (EventId)
             {
@@ -43,13 +43,6 @@ public class EventChaos : MonoBehaviour
                     StartCoroutine(SpeedEvent());
                     break;
                 case 2:
-                    Debug.Log("Event en court : Earthquake " +EventId);
-                    eventName = "C'est la danse de la Terre";
-                    StartCoroutine(ShowEventName());
-                    EventOnGoing = true;
-                    StartCoroutine(Earthquake());
-                    break;
-                case 3:
                     Debug.Log("Event en court : DrunkEffectCoroutine " +EventId);
                     eventName = "Nan gé pas buuuuu !";
                     StartCoroutine(ShowEventName());
@@ -58,6 +51,13 @@ public class EventChaos : MonoBehaviour
                     {
                         StartCoroutine(DrunkEffectCoroutine(cam)); // Démarre l'effet pour chaque caméra
                     }
+                    break;
+                case 3:
+                    Debug.Log("Event en court : Nothing " +EventId);
+                    eventName = "Event not found";
+                    StartCoroutine(ShowEventName());
+                    EventOnGoing = true;
+                    StartCoroutine(Nothing());
                     break;
                 case 4:
                     Debug.Log("Event en court : Nothing " +EventId);
@@ -74,13 +74,6 @@ public class EventChaos : MonoBehaviour
                     StartCoroutine(Nothing());
                     break;
                 case 6:
-                    Debug.Log("Event en court : Nothing " +EventId);
-                    eventName = "Event not found";
-                    StartCoroutine(ShowEventName());
-                    EventOnGoing = true;
-                    StartCoroutine(Nothing());
-                    break;
-                case 7:
                     Debug.Log("Event en court : SlowMotion " +EventId);
                     eventName = "Mode retraités, experts en lenteur ";
                     StartCoroutine(ShowEventName());
