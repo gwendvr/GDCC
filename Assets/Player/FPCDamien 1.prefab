@@ -142,7 +142,7 @@ MonoBehaviour:
   - {fileID: 3264349101031037750}
   - {fileID: 4927034563713685928}
   myCamera: {fileID: 1866093319889897059}
-  cameraReach: 8
+  cameraReach: 21
   isAlive: 0
   cooldownPhoto: 0
   isFlashing: 0
@@ -485,8 +485,8 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0
-  m_Range: 20
-  m_SpotAngle: 120
+  m_Range: 50
+  m_SpotAngle: 80
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
