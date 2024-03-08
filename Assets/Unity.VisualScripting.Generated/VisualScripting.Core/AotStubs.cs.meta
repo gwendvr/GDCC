@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 4f4602949bb5ab64aa846729d6661f51
+=======
+guid: 030bc7cb2011ae6408cad4f606e2568a
+>>>>>>> refix-map
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
