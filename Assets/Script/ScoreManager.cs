@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour
     public int pointsForLastSurvivor = 3; // Points attribués au dernier survivant
     public LeaderboardManager lm;
     public GameObject canvaScore;
+    private bool pointsAdded = false;
     
     void Update()
     {
@@ -35,6 +36,8 @@ public class ScoreManager : MonoBehaviour
     
     void CheckLastSurvivor()
     {
+        if (pointsAdded) return;
+
         GameObject lastSurvivor = null;
         int survivors = 0;
 
@@ -52,6 +55,7 @@ public class ScoreManager : MonoBehaviour
             AddPoints(lastSurvivor, pointsForLastSurvivor);
             lm.UpdateScore();
             canvaScore.SetActive(true);
+            pointsAdded = true;
         }
     }
 
@@ -100,9 +104,20 @@ public class ScoreManager : MonoBehaviour
         {
             if(player.activeInHierarchy && player.GetComponent<Score>().ScorePlayer >= 10)
             {
+                Debug.LogWarning("Jai gagne");
                 SceneManager.LoadScene("VictoryScene"); 
                 break; 
             }
         }
+    }
+
+    public void RestartManche()
+    {
+        foreach (var player in players)
+        {
+            player.gameObject.SetActive(true);
+        }
+
+        pointsAdded = false;
     }
 }

@@ -22,6 +22,7 @@ public class player : MonoBehaviour
     public bool cooldownPhoto;
     public bool isFlashing;
     public Light flash;
+    public bool isInteracting;
 
 
     void Start()
@@ -44,7 +45,7 @@ public class player : MonoBehaviour
         {
             return;
         }
-        if (canInteract && Input.GetKey(KeyCode.E))
+        if (canInteract && Input.GetKey(KeyCode.JoystickButton0))
         {
             if (currentInteraction.available == true)
             {
@@ -62,15 +63,45 @@ public class player : MonoBehaviour
             }
 
         }
-        if (!Input.GetKey(KeyCode.E))
+        if (!Input.GetKey(KeyCode.JoystickButton0))
         {
             progressBar.gameObject.SetActive(false);
             textDone.gameObject.SetActive(false);
             progressBar.value = 0;
-        }
+        }/*
         if ( isChargingPhoto&& Input.GetMouseButtonDown(0)&&cooldownPhoto)
         {
             takePhoto();
+        }*/
+    }
+
+    public void Interact()
+    {
+        if (canInteract && Input.GetKey(KeyCode.JoystickButton0))
+        {
+            if (currentInteraction.available == true)
+            {
+                isInteracting = true;
+                progressBar.gameObject.SetActive(true);
+                //isInteracting = true;
+                progressBar.value += 0.01f;
+                if (progressBar.value == progressBar.maxValue)
+                {
+                    clearTask();
+                    isInteracting = false;
+                }
+            }
+            else
+            {
+                textDone.gameObject.SetActive(true);
+            }
+
+        }
+        if (!Input.GetKey(KeyCode.JoystickButton0))
+        {
+            progressBar.gameObject.SetActive(false);
+            textDone.gameObject.SetActive(false);
+            progressBar.value = 0;
         }
     }
 
@@ -103,24 +134,28 @@ public class player : MonoBehaviour
 
     public void takePhoto()
     {
-        for(int i=0; i < listOtherPlayer.Count; i++)
+        if (isChargingPhoto && cooldownPhoto)
         {
-            player otherplayer = listOtherPlayer[i].GetComponentInChildren<player>();
-            Vector3 pos = myCamera.WorldToViewportPoint(otherplayer.myMeshRenderer[0].transform.position);
-            RaycastHit rh = new RaycastHit();
-            bool rc = Physics.Raycast(this.transform.position, otherplayer.transform.position - this.transform.position, out rh,100,512);
-            if (rc == true) {
-                Debug.Log("Raycast colliding with " + rh.collider.gameObject.tag);
-                if (pos.x > 0 && pos.x < 1 && pos.y > 0 && pos.y < 1 && pos.z > 0 && Mathf.Abs((otherplayer.transform.position - this.transform.position).magnitude) < cameraReach && rh.collider.gameObject.tag.Equals("Player"))
+            for (int i = 0; i < listOtherPlayer.Count; i++)
+            {
+                player otherplayer = listOtherPlayer[i].GetComponentInChildren<player>();
+                Vector3 pos = myCamera.WorldToViewportPoint(otherplayer.myMeshRenderer[0].transform.position);
+                RaycastHit rh = new RaycastHit();
+                bool rc = Physics.Raycast(this.transform.position, otherplayer.transform.position - this.transform.position, out rh, 100, 512);
+                if (rc == true)
                 {
-                    otherplayer.die();
-                    StartCoroutine(flashingTarget(otherplayer));
+                    Debug.Log("Raycast colliding with " + rh.collider.gameObject.tag);
+                    if (pos.x > 0 && pos.x < 1 && pos.y > 0 && pos.y < 1 && pos.z > 0 && Mathf.Abs((otherplayer.transform.position - this.transform.position).magnitude) < cameraReach && rh.collider.gameObject.tag.Equals("Player"))
+                    {
+                        otherplayer.die();
+                        StartCoroutine(flashingTarget(otherplayer));
+                    }
                 }
+
             }
-            
+            StartCoroutine(flashing());
+            StartCoroutine(cooldownNewPhoto());
         }
-        StartCoroutine(flashing());
-        StartCoroutine(cooldownNewPhoto());
     }
 
     public void die()
@@ -155,6 +190,17 @@ public class player : MonoBehaviour
         p.gameObject.transform.parent.gameObject.transform.parent.gameObject.SetActive(false);
         isFlashing = false;
     }
+    
+    public void TwoPlayer()
+    {
+        listOtherPlayer.RemoveAt(3);
+        listOtherPlayer.RemoveAt(2);
+    }
+    public void ThreePlayer()
+    {
+        listOtherPlayer.RemoveAt(3);
+    }
+
 
     /*private void setupOtherPlayers()
     {

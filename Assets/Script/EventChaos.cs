@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EventChaos : MonoBehaviour
 {
     public Light[] LightMap;
-    public GameObject[] Bot, Player;
+    public List<GameObject> Bot, PlayerCam;
     public Text Txt;
 
     private bool EventOnGoing = false;
@@ -24,7 +24,7 @@ public class EventChaos : MonoBehaviour
         if (!EventOnGoing)
         {
             
-            EventId = Random.Range(0, 7);
+            EventId = Random.Range(0, 8);
             
             switch (EventId)
             {
@@ -54,7 +54,7 @@ public class EventChaos : MonoBehaviour
                     eventName = "Nan gé pas buuuuu !";
                     StartCoroutine(ShowEventName());
                     EventOnGoing = true;
-                    foreach (GameObject cam in Player)
+                    foreach (GameObject cam in PlayerCam)
                     {
                         StartCoroutine(DrunkEffectCoroutine(cam)); // Démarre l'effet pour chaque caméra
                     }
@@ -94,9 +94,11 @@ public class EventChaos : MonoBehaviour
     
     IEnumerator ShowEventName()
     {
+        Txt.gameObject.SetActive(true);
         Txt.text = eventName; 
         yield return new WaitForSeconds(2f);
         Txt.text = "";
+        Txt.gameObject.SetActive(false);
     }
 
     IEnumerator DarkEvent()
@@ -116,12 +118,12 @@ public class EventChaos : MonoBehaviour
 
     IEnumerator SpeedEvent()
     {
-        for (int i = 0; i < Bot.Length; i++)
+        for (int i = 0; i < Bot.Count; i++)
         {
             Bot[i].GetComponent<IA>().speedMultiplier += 20;
         }
         yield return new WaitForSeconds(30);
-        for (int i = 0; i < Bot.Length; i++)
+        for (int i = 0; i < Bot.Count; i++)
         {
             Bot[i].GetComponent<IA>().speedMultiplier -= 20;
         }
@@ -137,39 +139,39 @@ public class EventChaos : MonoBehaviour
     }
 
     IEnumerator Earthquake()
+    {
+        List<Vector3> originalPositions = new List<Vector3>();
+
+        foreach (GameObject cam in PlayerCam)
         {
-            List<Vector3> originalPositions = new List<Vector3>(); 
+            originalPositions.Add(cam.transform.position);
+        }
 
-            
-            foreach (GameObject cam in Player)
+        float elapsed = 0.0f;
+
+        while (elapsed < 30)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+
+            for (int i = 0; i < PlayerCam.Count; i++)
             {
-                originalPositions.Add(cam.transform.position);
+                GameObject cam = PlayerCam[i];
+                Vector3 originalPosition = originalPositions[i];
+                cam.transform.position = new Vector3(originalPosition.x + x, originalPosition.y + y, originalPosition.z);
             }
 
-            float elapsed = 0.0f;
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
 
-            while (elapsed < 30)
-            {
-                float x = Random.Range(-1f, 1f) * magnitude;
-                float y = Random.Range(-1f, 1f) * magnitude;
-
-                for (int i = 0; i < Player.Length; i++)
-                {
-                    GameObject cam = Player[i];
-                    Vector3 originalPosition = originalPositions[i];
-                    cam.transform.position = new Vector3(originalPosition.x + x, originalPosition.y + y, originalPosition.z);
-                }
-
-                elapsed += Time.deltaTime;
-                yield return null;
-            }
-
-            
-            for (int i = 0; i < Player.Length; i++)
-            {
-                GameObject cam = Player[i];
-                cam.transform.position = originalPositions[i];
-            }
+        // Remettre les caméras à leur position originale
+        for (int i = 0; i < PlayerCam.Count; i++)
+        {
+            GameObject cam = PlayerCam[i];
+            Vector3 originalPosition = originalPositions[i];
+            cam.transform.position = originalPosition;
+        }
             EventOnGoing = false;
         }
         IEnumerator DrunkEffectCoroutine(GameObject cam)
@@ -202,5 +204,14 @@ public class EventChaos : MonoBehaviour
         {
             yield return new WaitForSeconds(30);
             EventOnGoing = false;
+        }
+        public void TwoPlayer()
+        {
+            PlayerCam.RemoveAt(3);
+            PlayerCam.RemoveAt(2);
+        }
+        public void ThreePlayer()
+        {
+            PlayerCam.RemoveAt(3);
         }
 }

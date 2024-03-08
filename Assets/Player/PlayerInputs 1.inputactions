@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInputs",
+    "name": "PlayerInputs 1",
     "maps": [
         {
             "name": "MainActions1",
@@ -27,7 +27,7 @@
                     "name": "MoveCam",
                     "type": "Value",
                     "id": "4a13158c-b754-45e0-b21b-b3b919230fea",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Stick",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "TakePic",
+                    "type": "Button",
+                    "id": "8ba831cc-977f-4aea-b7ef-8ff0c3f3fff0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -175,6 +184,28 @@
                     "processors": "",
                     "groups": "Player1;Player2;Player3;Player4",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4e58940c-22f0-4a41-8612-ba593e128784",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player4;Player3;Player2;Player1",
+                    "action": "TakePic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "719ac542-90dc-46ce-aa7f-b3cc73b32794",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player1;Player2;Player3;Player4",
+                    "action": "TakePic",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

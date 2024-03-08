@@ -72,7 +72,7 @@ public class PlayerSpawner : MonoBehaviour
 
     IEnumerator HideFakeCams(int _fakeCamID)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(15f);
         fakePhotoSpawnPoints[_fakeCamID].SetTrigger("Ranger");
     }
     }
