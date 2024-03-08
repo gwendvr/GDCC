@@ -23,6 +23,8 @@ public class player : MonoBehaviour
     public bool isFlashing;
     public Light flash;
     public bool isInteracting;
+    public PlayerController playerInteract;
+    public pointCle task;
 
 
     void Start()
@@ -109,6 +111,7 @@ public class player : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<IInteract>(out IInteract interact))
         {
+            task = other.gameObject.GetComponent<pointCle>();
             UIInteract.SetActive(true);
             canInteract = true;
             progressBar.maxValue = interact.ct;
@@ -120,6 +123,7 @@ public class player : MonoBehaviour
     {
         if (canInteract)
         {
+            task = null;
             UIInteract.SetActive(false);
             canInteract = false;
         }
@@ -130,6 +134,7 @@ public class player : MonoBehaviour
     {
         currentInteraction.available = false; 
         progressBar.gameObject.SetActive(false);
+        playerInteract.OnAddUltiProgression(task.taskPoint);
     }
 
     public void takePhoto()

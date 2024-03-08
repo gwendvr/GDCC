@@ -113,7 +113,7 @@ public partial class @PlayerInputs1: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""82b3d03c-0f0f-4a26-a3cf-82c8c0f185f6"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Player1"",
@@ -124,7 +124,7 @@ public partial class @PlayerInputs1: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a412710f-33c9-4aa1-aa28-da04d88252f3"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Player2;Player1;Player3;Player4"",
@@ -212,7 +212,7 @@ public partial class @PlayerInputs1: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4e58940c-22f0-4a41-8612-ba593e128784"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Player4;Player3;Player2;Player1"",
@@ -223,7 +223,7 @@ public partial class @PlayerInputs1: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""719ac542-90dc-46ce-aa7f-b3cc73b32794"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Player1;Player2;Player3;Player4"",
