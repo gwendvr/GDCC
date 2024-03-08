@@ -190,6 +190,17 @@ public class player : MonoBehaviour
         p.gameObject.transform.parent.gameObject.transform.parent.gameObject.SetActive(false);
         isFlashing = false;
     }
+    
+    public void TwoPlayer()
+    {
+        listOtherPlayer.RemoveAt(3);
+        listOtherPlayer.RemoveAt(2);
+    }
+    public void ThreePlayer()
+    {
+        listOtherPlayer.RemoveAt(3);
+    }
+
 
     /*private void setupOtherPlayers()
     {
