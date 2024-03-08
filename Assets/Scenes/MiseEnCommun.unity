@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -721,6 +721,22 @@ PrefabInstance:
       propertyPath: m_NormalizedViewPortRect.height
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.data[0]
+      value: 
+      objectReference: {fileID: 1026095392}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.data[1]
+      value: 
+      objectReference: {fileID: 1640816850}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.data[2]
+      value: 
+      objectReference: {fileID: 1470576267}
     - target: {fileID: 4162286165493215122, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -43956,6 +43972,22 @@ PrefabInstance:
       propertyPath: m_NormalizedViewPortRect.height
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.data[0]
+      value: 
+      objectReference: {fileID: 1026095392}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.data[1]
+      value: 
+      objectReference: {fileID: 335858126}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.data[2]
+      value: 
+      objectReference: {fileID: 1470576267}
     - target: {fileID: 4162286165493215122, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -57421,6 +57453,22 @@ PrefabInstance:
       propertyPath: m_NormalizedViewPortRect.height
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.data[0]
+      value: 
+      objectReference: {fileID: 1640816850}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.data[1]
+      value: 
+      objectReference: {fileID: 335858126}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.data[2]
+      value: 
+      objectReference: {fileID: 1470576267}
     - target: {fileID: 4162286165493215122, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -60016,6 +60064,22 @@ PrefabInstance:
       propertyPath: m_NormalizedViewPortRect.height
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.data[0]
+      value: 
+      objectReference: {fileID: 1026095392}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.data[1]
+      value: 
+      objectReference: {fileID: 1640816850}
+    - target: {fileID: 3374851414164266475, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
+      propertyPath: listOtherPlayer.Array.data[2]
+      value: 
+      objectReference: {fileID: 335858126}
     - target: {fileID: 4162286165493215122, guid: cde47f91b7a0be5479da8914475b9082, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
