@@ -164,6 +164,7 @@ public class player : MonoBehaviour
         canInteract=false;
         flash.intensity = 0;
         progressBar.value = 0;
+        StopAllCoroutines();
     }
 
     IEnumerator cooldownNewPhoto()

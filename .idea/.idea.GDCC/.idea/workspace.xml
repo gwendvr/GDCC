@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="03c55042-b807-4f99-be0e-d6b8815f3cb6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GDCC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDCC/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MiseEnCommun.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MiseEnCommun.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/EventChaos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/EventChaos.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/ScoreManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
