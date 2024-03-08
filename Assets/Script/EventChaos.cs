@@ -30,21 +30,21 @@ public class EventChaos : MonoBehaviour
             {
                 case 0:
                     Debug.Log("Event en court : DarkEvent " +EventId);
-                    eventName = "Il va faire tout noir !";
+                    eventName = "It's getting dark, better light a spark!";
                     StartCoroutine(ShowEventName());
                     EventOnGoing = true;
                     StartCoroutine(DarkEvent());
                     break;
                 case 1:
                     Debug.Log("Event en court : SpeedEvent " +EventId);
-                    eventName = "Rapide comme l'éclair";
+                    eventName = "Fast as a jackrabbit on a caffeine high";
                     StartCoroutine(ShowEventName());
                     EventOnGoing = true;
                     StartCoroutine(SpeedEvent());
                     break;
                 case 2:
                     Debug.Log("Event en court : DrunkEffectCoroutine " +EventId);
-                    eventName = "Nan gé pas buuuuu !";
+                    eventName = "I'm not drunk, I'm just speaking in cursive.";
                     StartCoroutine(ShowEventName());
                     EventOnGoing = true;
                     foreach (GameObject cam in PlayerCam)
@@ -54,28 +54,28 @@ public class EventChaos : MonoBehaviour
                     break;
                 case 3:
                     Debug.Log("Event en court : Nothing " +EventId);
-                    eventName = "Event not found";
+                    eventName = "Waiting... For... Nothing...";
                     StartCoroutine(ShowEventName());
                     EventOnGoing = true;
                     StartCoroutine(Nothing());
                     break;
                 case 4:
                     Debug.Log("Event en court : Nothing " +EventId);
-                    eventName = "Event not found";
+                    eventName = "Waiting... For... Nothing...";
                     StartCoroutine(ShowEventName());
                     EventOnGoing = true;
                     StartCoroutine(Nothing());
                     break;
                 case 5:
                     Debug.Log("Event en court : Nothing " +EventId);
-                    eventName = "Event not found";
+                    eventName = "Waiting... For... Nothing...";
                     StartCoroutine(ShowEventName());
                     EventOnGoing = true;
                     StartCoroutine(Nothing());
                     break;
                 case 6:
                     Debug.Log("Event en court : SlowMotion " +EventId);
-                    eventName = "Mode retraités, experts en lenteur ";
+                    eventName = "I'm not lazy, I'm just on sloth mode.";
                     StartCoroutine(ShowEventName());
                     EventOnGoing = true;
                     StartCoroutine(SlowMotion());
